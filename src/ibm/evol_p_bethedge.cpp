@@ -24,7 +24,7 @@ gsl_rng_type const * T; // gnu scientific library rng type
 gsl_rng *r; // gnu scientific rng 
 
 const size_t Npatch = 4000; 
-const size_t numgen = 80000;
+const size_t numgen = 40000;
 int sample = 20;
 double d0 = 0.01; //some starting values
 double h0 = 0.01;
@@ -640,7 +640,7 @@ int main(int argc, char **argv)
     // of size_t = ~65500
     for (generation = 0; generation < numgen; ++generation)
     {
-        for (size_t generation2 = 0; generation2 < numgen; ++generation2)
+        for (size_t generation2 = 0; generation2 < 80000; ++generation2)
         {
             // generate cumulative prob. distribution of possible
             // events

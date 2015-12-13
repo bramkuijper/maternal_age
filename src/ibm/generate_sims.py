@@ -5,11 +5,11 @@ import os, re, sys,math
 from numpy import *
 
 # frequency of envt 2
-freq_patch_2 = list(arange(0.01,1.0,0.02))
+freq_patch_2 = list(arange(0.01,1.0,0.05)) + [ 0.9999]
 
 # avarage switch rate
-sbar = list(arange(-1.5, 0.5, 2.0/50))
-k = [ 0.5 ]
+sbar = [ -0.98 ] #list(arange(-1.5, 0.5, 2.0/50))
+k = [ 0.1, 0.5, 0.95 ]
 
 
 c1 = 0.5
@@ -21,7 +21,9 @@ C2 = 0
 C3 = 0
 C4 = 0
 
-exe = "./xevol_px"
+#exe = "./xevol_px"
+exe = "./xevol_p_bethedge"
+#exe = "/home/uccoaku/maternal_age/src/ibm/xevol_p_bethedge"
 
 counter = 0
 

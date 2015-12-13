@@ -1,0 +1,409 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+How does parental age influence inheritance?
+\end_layout
+
+\begin_layout Author
+Bram Kuijper
+\begin_inset Formula $^{1,2,3}$
+\end_inset
+
+ & Rufus A.
+ Johnstone
+\begin_inset Formula $^{4,5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+- run simulations.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Organisms rely on various sources of developmental information to align
+ their phenotype with the prevailing environment 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "McNamara2010,Shea2011,Dall2015"
+
+\end_inset
+
+.
+ In this context, genes are the most prominent sources of developmental
+ information together with information contained by cues about the current
+ environment 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pigliucci2001,West-Eberhard2003"
+
+\end_inset
+
+.
+ It is increasingly recognized, however, that also the parental phenotype
+ may provide information about the environment, as an accumulating number
+ of studies suggest that parental antibodies, hormones or heritable small
+ RNAs and chromatin modifications modulate offspring phenotypes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mousseau1998b,Uller2008,Danchin2011"
+
+\end_inset
+
+.
+ Importantly, relying on these parental effects can potentially result in
+ nongenetic inheritance, whereby phenotypes are inherited to future generations
+ without being encoded in DNA-basepair variations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bonduriansky2009,Danchin2011"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Whether nongenetic inheritance can favored by natural selection is only
+ starting to be understood 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Daxinger2012,Heard2014"
+
+\end_inset
+
+, most recently in a series of models that assessed the evolution of parental
+ effects in variable environments 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kuijper2015,Kuijper2015b,English2015,Leimar2015,Uller2015"
+
+\end_inset
+
+.
+ These models focus on a scenario whereby a single offspring's phenotype
+ is influenced either by the parental environment or the parental phenotype
+ itself 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "but see"
+key "Kuijper2014a"
+
+\end_inset
+
+.
+ In reality, however, a parent's phenotype consists of various different
+ components, each of which reflects a different aspect of a parent's state,
+ and which could potentially influence nongenetic inheritance 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g.,"
+key "Postma2013,Tschirren2014"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Parental age is one such component of a parent's phenotype that has been
+ overlooked in the theoretical literature so far, whereas numerous empirical
+ studies have shown that a parent's age at conception can have long-term
+ fitness effects on offspring 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cannon2009,Torres2011,Eisenberg2012,Schroeder2015"
+
+\end_inset
+
+.
+ Most of the empirical studies focus exclusively, however, on deleterious
+ effects of parental age on offspring fitness, due to mutation accumulation
+ and telemore shortening.
+ Yet, the more general question, whether offspring gain something from knowing
+ their parent's age, and whether offspring born from parents of different
+ age should evolve a different sensitivity to parental effects has not been
+ explored.
+\end_layout
+
+\begin_layout Standard
+Here we build on previous models in which development is modeled as a switching
+ device 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Leimar2015,English2015,Kuijper2015b"
+
+\end_inset
+
+, which integrates genetic and different parental cues as inputs, and specifies
+ the offspring's phenotype as output.
+ For the sake of brevity, the current paper chiefly focuses on two types
+ of parental cues, (i) the parental phenotype and (ii) parental age, while
+ the evolution of genetic cues has been dealt with elsewhere 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Leimar2006,Leimar2015,Dall2015"
+
+\end_inset
+
+.
+ We assess whether parental age can modulate 
+\end_layout
+
+\begin_layout Section
+The model
+\end_layout
+
+\begin_layout Standard
+Our model is similar to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kuijper2015b"
+
+\end_inset
+
+, in which we focus on an asexual population distributed over infinitely
+ many patches linked by juvenile dispersal 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wright1931,Wright1951"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Subsection
+Information about parental age only
+\end_layout
+
+\begin_layout Standard
+Figure 1 shows an example of a case in which offspring only have information
+ about parental age, yet no information about the parent's phenotype.
+ Young and old parents produce only a single type of offspring in case one
+ environment is very common (grey areas in Figure 1).
+ However, when the encounter rate of environment 1 versus 2 is more similar
+ (close to 
+\begin_inset Formula $f_{e_{2}}=0.2$
+\end_inset
+
+), young parents are more likely to produce a mixture of offspring phenotypes
+ in comparison to older parents (compare dashed versus dotted lines in Figure
+ 1).
+ Consequently, as strategies diverge between young and old parents, parental
+ age 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{per se}
+\end_layout
+
+\end_inset
+
+ is informative.
+ Why do we find this effect? 
+\end_layout
+
+\begin_layout Section
+Discussion
+\end_layout
+
+\begin_layout Standard
+s 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g.,"
+key "Torres2011,Gillespie2013,Schroeder2015"
+
+\end_inset
+
+, finding, for example, that mothers of old age produce (the so-called ``Lansing
+ effect'', 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gillespie2013,Schroeder2015,Nystrand2014"
+
+\end_inset
+
+, other studies find a positive relationship between maternal age and offspring
+ fitness, or no effect at all.
+ So far, few studies have aimed to understand the underlying mechanisms
+\end_layout
+
+\begin_layout Standard
+.
+ Often, these phenotypic effects
+\end_layout
+
+\begin_layout Standard
+Cite 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Fischer2014"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+- mention conflict again.
+\end_layout
+
+\begin_layout Standard
+- mention laurel's study\SpecialChar \@.
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/home/bram/Projects/databases/transgenerational"
+options "bram"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Figure captions
+\end_layout
+
+\begin_layout Section
+Figures
+\end_layout
+
+\end_body
+\end_document

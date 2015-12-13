@@ -1,0 +1,116 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+The probability 
+\begin_inset Formula $q_{z_{1}\rightarrow z_{1}}$
+\end_inset
+
+ that a 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ parent will give birth to a juvenile with an identical phenotype is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+q_{z_{1}\rightarrow z_{1}} & =\biggl\{\left(f_{a_{j}a_{s}e_{1}}+f_{m_{j}m_{s}e_{2}}\right)\frac{1}{2}\left[p_{11}+p_{10}\right]\\
+ & +\frac{1}{2}\left(f_{m_{j}a_{s}e_{1}}+f_{a_{j}m_{s}e_{2}}\right)\left[\left(1-\phi\right)p_{11}\right]\\
+ & +\frac{1}{2}\left(f_{a_{j}m_{s}e_{1}}+f_{a_{j}m_{s}e_{2}}\right)\left[\left(1-\phi\right)p_{10}+\phi p_{20}\right]\biggl\}\\
+ & /\left[f_{a_{j}a_{s}e_{1}}+f_{m_{j}m_{s}e_{2}}+\frac{1}{2}\left(f_{m_{j}a_{s}e_{1}}+f_{a_{j}m_{s}e_{2}}+f_{a_{j}m_{s}e_{1}}+f_{a_{j}m_{s}e_{2}}\right)\right]
+\end{align*}
+
+\end_inset
+
+Similarly for a 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ parent, we have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+q_{z_{2}\rightarrow z_{2}} & =\biggl\{\left(f_{a_{j}a_{s}e_{2}}+f_{m_{j}m_{s}e_{1}}\right)\left[\left(1-\phi\right)\left(1-p_{11}\right)+\phi p_{21}+\left(1-\phi\right)p_{10}+\phi p_{20}\right]\\
+ & +\frac{1}{2}\left(f_{m_{j}a_{s}e_{1}}+f_{a_{j}m_{s}e_{2}}\right)\left[\left(1-\phi\right)p_{11}+\phi p_{21}\right]\\
+ & +\frac{1}{2}\left(f_{a_{j}m_{s}e_{1}}+f_{a_{j}m_{s}e_{2}}\right)\left[\left(1-\phi\right)p_{10}+\phi p_{20}\right]\biggl\}\\
+ & /\left[f_{a_{j}a_{s}e_{1}}+f_{m_{j}m_{s}e_{2}}+\frac{1}{2}\left(f_{m_{j}a_{s}e_{1}}+f_{a_{j}m_{s}e_{2}}+f_{a_{j}m_{s}e_{1}}+f_{a_{j}m_{s}e_{2}}\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

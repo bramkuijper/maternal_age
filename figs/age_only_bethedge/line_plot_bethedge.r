@@ -2,7 +2,7 @@ source("/home/bram/R/src/bramlib.r")
 
 # heights and widths of the panels that display the graphs
 heights <- c(0.2, 1,0.3)
-widths <- c(0.3,1,0.1,1,1.0)
+widths <- c(0.3,1,0.1,1,1.2)
 
 # parameters for the graphics
 line.lwd <- 0.3
@@ -22,7 +22,28 @@ panel.opt <- function(x, y, dataset, yvars, colors, ltys, lwds,...)
     dataset$x1 <- 1 - dataset$x2
     dataset <- dataset[order(dataset$x1),]
 
-    #grid.rect(
+    p.bound <- 0.001
+
+    # find out where mixtures occur
+    # to make grey square indicating bet-heding
+    # this is a bit involved as we need to find the last point where bet-hedging
+    # does not occur
+
+    # first find bet-hedging in the left half of each plot
+    dat.left <- dataset[dataset$x1 <= 0.5,]
+    dat.right <- dataset[dataset$x1 > 0.5,]
+    # find pure strategy range
+    x1.pure.left <- range(dat.left[dat.left$p10 < p.bound & dat.left$p11 < p.bound,"x1"])
+    x1.pure.right <- range(dat.right[dat.right$p10 > 1.0 - p.bound & dat.right$p11 > 1.0 - p.bound,"x1"])
+
+    x1.bethedge <- c(x1.pure.left[[2]],x1.pure.right[[1]])
+
+    grid.rect(x=unit(0.5,"native"),
+                y=unit(0.5, "native"),
+                width=unit(abs(diff(x1.bethedge)),"native"), 
+                height=unit(1.0,"native"), 
+                gp=gpar(fill="grey80",border="transparent",col="transparent")
+                )
 
     for (i in 1:length(yvars))
     {
@@ -122,7 +143,7 @@ dat <- read.table("summary_maternal_age_pbethedge_total.csv",sep=";",header=T)
 
 
 init.plot(file="bethedge_lineplot",
-                width=400,
+                width=450,
                 type="pdf",
                 height=180,
             font="helvetica")
@@ -136,8 +157,7 @@ lo <- grid.layout(
 
 pushViewport(viewport(layout=lo))
 
-    
-dat.sub <- dat[dat$k == 0.5 & dat$y2 == 0.14,]
+dat.sub <- dat[dat$k == 0.5 & dat$y2 == -0.98,]
 
     block(row=2, 
             col=2, 
@@ -145,22 +165,6 @@ dat.sub <- dat[dat$k == 0.5 & dat$y2 == 0.14,]
             ylab=expression(paste("Proportion ",italic(z)[1]," offspring")),
             print.xlabels=T,
             ind.label="A",
-            label="Rapidly changing environment",
-            dataset=dat.sub,
-            yvars=c("p10","p11"),
-            ltys=list(1,"22"),
-            lwds=rep(plot.lwd,times=2),
-            colors=c("red","blue")
-            )
-    
-dat.sub <- dat[dat$k == 0.5 & dat$y2 == -0.98,]
-
-    block(row=2, 
-            col=4, 
-            xlab="",
-            ylab=expression(paste("Proportion ",italic(z)[1]," offspring")),
-            print.xlabels=T,
-            ind.label="B",
             label="Slowly changing environment",
             dataset=dat.sub,
             yvars=c("p10","p11"),
@@ -169,9 +173,27 @@ dat.sub <- dat[dat$k == 0.5 & dat$y2 == -0.98,]
             colors=c("red","blue")
             )
 
+
+    
+dat.sub <- dat[dat$k == 0.5 & dat$y2 == 0.14,]
+
+    block(row=2, 
+            col=4, 
+            xlab="",
+            ylab=expression(paste("Proportion ",italic(z)[1]," offspring")),
+            print.xlabels=T,
+            ind.label="B",
+            label="Rapidly changing environment",
+            dataset=dat.sub,
+            yvars=c("p10","p11"),
+            ltys=list(1,"22"),
+            lwds=rep(plot.lwd,times=2),
+            colors=c("red","blue")
+            )
+    
     grid.text(x=0.4,
                 y=0.08,
-                label=expression(paste("Frequency environment 1")),
+                label=expression(paste("Frequency of patches in environment 1, ",italic(f)[italic(e)[1]])),
                 gp=gpar(cex=label.cex))
                 
     # legend
@@ -189,7 +211,7 @@ dat.sub <- dat[dat$k == 0.5 & dat$y2 == -0.98,]
         grid.text(x=0.25,
                     y=y.pos,
                     just="left",
-                    label=expression(paste("Young mothers, ", italic(p)["young"])),
+                    label=expression(paste("Old mothers, ", italic(p)["old"])),
                     gp=gpar(cex=legend.cex))
 
 
@@ -203,9 +225,23 @@ dat.sub <- dat[dat$k == 0.5 & dat$y2 == -0.98,]
         grid.text(x=0.25,
                     y=y.pos,
                     just="left",
-                    label=expression(paste("Old mothers, ", italic(p)["old"])),
+                    label=expression(paste("Young mothers, ", italic(p)["young"])),
                     gp=gpar(cex=legend.cex))
 
+        y.pos <- 0.7
+        grid.rect(x=unit(0.15,"npc"),
+                    y=unit(y.pos,"npc"),
+                    height=unit(0.05,"npc"),
+                    width=unit(0.05,"npc"),
+                    gp=gpar(fill="grey80",
+                            col="transparent",
+                            lwd=plot.lwd)
+                    )
+        grid.text(x=0.25,
+                    y=y.pos,
+                    just="left",
+                    label=expression(paste("Mixtures of offspring phenotypes")),
+                    gp=gpar(cex=legend.cex))
     upViewport()
 upViewport()
 

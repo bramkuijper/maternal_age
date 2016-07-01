@@ -1,24 +1,31 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
+\begin_preamble
+\usepackage{apjfonts}
+\definecolor{darkblue}{RGB}{0,4,106}
+\usepackage{doi}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -26,7 +33,17 @@
 \index_command default
 \paperfontsize 12
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "citecolor=darkblue,urlcolor=darkblue,linkcolor=darkblue"
 \papersize a4paper
 \use_geometry true
 \use_package amsmath 1
@@ -74,34 +91,72 @@
 \begin_body
 
 \begin_layout Title
-How does parental age influence inheritance?
+Stronger parental effects and phenotypic memory in older mothers
 \end_layout
 
 \begin_layout Author
 Bram Kuijper
-\begin_inset Formula $^{1,2,3}$
+\begin_inset Formula $^{1,2,3,4}$
 \end_inset
 
  & Rufus A.
  Johnstone
-\begin_inset Formula $^{4,5}$
+\begin_inset Formula $^{5,6}$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Abstract
+Parental information transmitted via parental effects can inform offspring
+ about the environment they are likely to face, allowing them to develop
+ an appropriate phenotypic response.
+ However, no parent is exactly the same, raising the question how these
+ parental effects vary with parental age or condition.
+ Here, we model the evolution of age-dependent parental effects in a population
+ experiencing a spatiotemporally fluctuating environment.
+ Overall, we predict that parental effects should vary strongly over a parent's
+ lifespan, where parental effects are weak in young parents but strong in
+ older ones.
+ The reason for this striking age difference is that an older parent's phenotype
+ is tried and tested through survival selection, so its phenotype is likely
+ to match the local environment as it would not have survived otherwise.
+ Consequently, older parents are selected to copy their adapted phenotype
+ to offspring via parental effects.
+ By contrast, young parents have experienced much less selection, so their
+ phenotype is only weakly correlated with the local environment, disfavoring
+ any parental influence on offspring phenotype determination.
+ Hence, parental effects and phenotypic inheritance are more likely to occur
+ in offspring born from older parents.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-- run simulations.
- 
+1) College of Life and Environmental Sciences, University of Exeter, Penryn
+ Campus, Penryn Cornwall, TR10 9FE United Kingdom
 \end_layout
 
-\end_inset
+\begin_layout Standard
+2) Centre for Mathematics and Physics in the Life Sciences and EXperimental
+ Biology (CoMPLEX), University College London, Gower Street, London, WC1E
+ 6BT, United Kingdom
+\end_layout
 
+\begin_layout Standard
+3) Department of Genetics, Evolution and Environment, University College
+ London, Gower Street, London, WC1E 6BT, United Kingdom
+\end_layout
 
+\begin_layout Standard
+4) a.l.w.kuijper@exeter.ac.uk
+\end_layout
+
+\begin_layout Standard
+5) Department of Zoology, University of Cambridge, Downing Street, Cambridge
+ CB2 3EJ, United Kingdom
+\end_layout
+
+\begin_layout Standard
+6) raj1003@hermes.cam.ac.uk
 \end_layout
 
 \begin_layout Section
@@ -110,7 +165,7 @@ Introduction
 
 \begin_layout Standard
 Organisms rely on various sources of developmental information to align
- their phenotype with the prevailing environment 
+ their phenotype with the prevalent environment 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "McNamara2010,Shea2011,Dall2015"
@@ -118,115 +173,129 @@ key "McNamara2010,Shea2011,Dall2015"
 \end_inset
 
 .
- In this context, genes are the most prominent sources of developmental
- information together with information contained by cues about the current
- environment 
+ Two well-studied sources of developmental information are the genes borne
+ by an individual 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Pigliucci2001,West-Eberhard2003"
+key "Dall2015"
 
 \end_inset
 
-.
- It is increasingly recognized, however, that also the parental phenotype
- may provide information about the environment, as an accumulating number
- of studies suggest that parental antibodies, hormones or heritable small
- RNAs and chromatin modifications modulate offspring phenotypes 
+ and the current environment it perceives (phenotypic plasticity: 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citealp
+key "Pigliucci2001,West-Eberhard2003,Leimar2006"
+
+\end_inset
+
+).
+ However, it is increasingly clear that the phenotypes or environments of
+ parents are also key factors in offspring phenotype development (parental
+ effects: 
+\begin_inset CommandInset citation
+LatexCommand citealt
 key "Mousseau1998b,Uller2008,Danchin2011"
 
 \end_inset
 
-.
- Importantly, relying on these parental effects can potentially result in
- nongenetic inheritance, whereby phenotypes are inherited to future generations
- without being encoded in DNA-basepair variations 
+).
+ Moreover, parental effects can lead to phenotypic inheritance, where phenotypes
+ are transmitted over multiple generations via other means than through
+ the inheritance of DNA basepair variations, but rather through the inheritance
+ of epimutations 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Bonduriansky2009,Danchin2011"
+key "Heard2014"
+
+\end_inset
+
+, maternal hormones or antibodies 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Groothuis2008,Boulinier2008"
+
+\end_inset
+
+ or other factors 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jablonka2009,Danchin2011"
 
 \end_inset
 
 .
- 
+ Understanding the ecological and social conditions in which these parental
+ effects evolve is thus key to understand when and where phenotypic memory
+ is important, if at all.
 \end_layout
 
 \begin_layout Standard
-Whether nongenetic inheritance can favored by natural selection is only
- starting to be understood 
+A major problem for the study of parental effects is, however, that no parent
+ is exactly the same.
+ Rather, parents vary in a multitude of factors such as age, resource level,
+ experience, or other relevant state variables 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Daxinger2012,Heard2014"
-
-\end_inset
-
-, most recently in a series of models that assessed the evolution of parental
- effects in variable environments 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Kuijper2015,Kuijper2015b,English2015,Leimar2015,Uller2015"
+key "Benton2008,Stamps2010,Dingemanse2010"
 
 \end_inset
 
 .
- These models focus on a scenario whereby a single offspring's phenotype
- is influenced either by the parental environment or the parental phenotype
- itself 
+ How these individual differences in state affect the evolution of parental
+ effects and, in turn, the prevalence of nongenetic inheritance is surprisingly
+ poorly understood.
+ While there is now a substantial body of predictions about the ecological
+ conditions favoring parental effects 
 \begin_inset CommandInset citation
 LatexCommand citep
-before "but see"
-key "Kuijper2014a"
+key "Rivoire2014,Kuijper2015,Kuijper2016,English2015,Leimar2015,Uller2015,Proulx2015"
 
 \end_inset
 
-.
- In reality, however, a parent's phenotype consists of various different
- components, each of which reflects a different aspect of a parent's state,
- and which could potentially influence nongenetic inheritance 
-\begin_inset CommandInset citation
-LatexCommand citep
-before "e.g.,"
-key "Postma2013,Tschirren2014"
-
-\end_inset
-
-.
- 
+, these models generally consider scenarios where parents only differ in
+ the level of adaptation to the environment, yet other differences in state
+ are absent.
 \end_layout
 
 \begin_layout Standard
-Parental age is one such component of a parent's phenotype that has been
- overlooked in the theoretical literature so far, whereas numerous empirical
- studies have shown that a parent's age at conception can have long-term
- fitness effects on offspring 
+One major component of an individual's state is its age.
+ Indeed, numerous empirical studies have shown that parental age at conception
+ can have long-term fitness effects on offspring 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Cannon2009,Torres2011,Eisenberg2012,Schroeder2015"
 
 \end_inset
 
-.
- Most of the empirical studies focus exclusively, however, on deleterious
- effects of parental age on offspring fitness, due to mutation accumulation
- and telemore shortening.
- Yet, the more general question, whether offspring gain something from knowing
- their parent's age, and whether offspring born from parents of different
- age should evolve a different sensitivity to parental effects has not been
- explored.
-\end_layout
-
-\begin_layout Standard
-Here we build on previous models in which development is modeled as a switching
- device 
+ and strong effects on population dynamics 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Leimar2015,English2015,Kuijper2015b"
+key "Benton2008"
 
 \end_inset
 
-, which integrates genetic and different parental cues as inputs, and specifies
- the offspring's phenotype as output.
+.
+ Most studies focus exclusively, however, on deleterious effects of parental
+ senesence on offspring fitness, due to mutation accumulation and telemore
+ shortening.
+ Yet, the more general question, whether offspring gain something from having
+ information about parental age, and whether offspring born from parents
+ of different age should evolve a different sensitivity to parental effects
+ has not been explored.
+\end_layout
+
+\begin_layout Standard
+To assess how parental age impacts on phenotypic inheritance, we build on
+ previous models in which development is modeled as a switching device (see
+ Fig 1) that integrates different inputs in offspring phenotype development
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Leimar2015,English2015,Kuijper2016"
+
+\end_inset
+
+.
  For the sake of brevity, the current paper chiefly focuses on two types
  of parental cues, (i) the parental phenotype and (ii) parental age, while
  the evolution of genetic cues has been dealt with elsewhere 
@@ -245,15 +314,18 @@ The model
 \end_layout
 
 \begin_layout Standard
-Our model is similar to 
+We focus on an asexual population distributed over infinitely many patches
+ that are connected by juvenile dispersal 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Kuijper2015b"
+LatexCommand citep
+before "see also"
+key "Kuijper2016"
 
 \end_inset
 
-, in which we focus on an asexual population distributed over infinitely
- many patches linked by juvenile dispersal 
+.
+ The assumption of infinitely many patches provides a tractable way of calcuting
+ the frequencies of the different types of patches and individuals 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Wright1931,Wright1951"
@@ -261,6 +333,417 @@ key "Wright1931,Wright1951"
 \end_inset
 
 .
+ Each patch contains one young breeder (subscript 
+\begin_inset Formula $y$
+\end_inset
+
+) and one old breeder (subscript 
+\begin_inset Formula $o$
+\end_inset
+
+).
+ Moreover, each patch switches between two possible environmental states
+ 
+\begin_inset Formula $\mathbf{e}=\{e_{1},e_{2}\}$
+\end_inset
+
+, independently of all the other patches.
+ At birth, each individual adopts one of two possible phenotypes 
+\begin_inset Formula $\mathbf{z}=\{z_{1},z_{2}\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Evolution of nongenetic inheritance
+\end_layout
+
+\begin_layout Standard
+We use a modifier approach, where a genetically encoded modifier modulates
+ the probability 
+\begin_inset Formula $p_{xj}$
+\end_inset
+
+ with which offspring will be of phenotype 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ when its parent is of age 
+\begin_inset Formula $x$
+\end_inset
+
+ and has phenotype 
+\begin_inset Formula $z_{j}$
+\end_inset
+
+.
+ For example, this modifier might be a gene coding for the efficacy of demethyla
+tion and remethylation proteins in retaining epimutations across subsequent
+ generations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Uller2015"
+
+\end_inset
+
+ or how strongly maternal hormones affect the expression of equivalent hormones
+ in offspring 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Groothuis2008"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+As mentioned before, the model considers only two age classes and two phenotypes
+ for the sake of tractability, resulting in four different probabilities
+ of producing 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ offspring, comprised in the vector 
+\begin_inset Formula $\mathbf{p}=[p_{y1},p_{y2},p_{o1},p_{o2}]$
+\end_inset
+
+.
+ A strategy where 
+\begin_inset Formula $p_{y1}=p_{y2}=p_{o1}=p_{o2}$
+\end_inset
+
+ results in the production of the same mix of offspring types regardless
+ of parental age or phenotype, implying that there is no transmission of
+ phenotypic or age-dependent information from parent to offspring.
+ When 
+\begin_inset Formula $p_{y1}=p_{y2}\neq p_{o1}=p_{o2}$
+\end_inset
+
+, offspring phenotypes only depend on parental age, yet there is no transmission
+ of phenotypic information.
+ When 
+\begin_inset Formula $p_{y1}=p_{o1}\neq p_{y2}=p_{o2}$
+\end_inset
+
+, however, selection favors at least some influence of the parental phenotype
+ on the determination of offspring.
+ Finally, when 
+\begin_inset Formula $p_{y1}\neq p_{y2}\neq p_{o1}\neq p_{o2}$
+\end_inset
+
+, both parental age and parental phenotype affect offspring phenotype determinat
+ion.
+ We use an adaptive dynamics approach 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Geritz1998,McGill2007,Dercole2008"
+
+\end_inset
+
+ to model the evolution of these strategies, assuming that evolutionary
+ change occurs through the successive substitution of mutations of slight
+ effect.
+ We assume a separation of timescales: demographical changes (environmental
+ change, deaths and births) occur at a much faster timescale than evolutionary
+ change in the gene loci that specify the probabilities of phenotypic inheritanc
+e.
+ We also allow for evolutionary change in the dispersal rate 
+\begin_inset Formula $d$
+\end_inset
+
+, on the same time scale as changes in the probabilities of phenotypic inheritan
+ce.
+\end_layout
+
+\begin_layout Subsection
+Population dynamics
+\end_layout
+
+\begin_layout Standard
+We use a Moran-model, where we model population dynamics in continuous time,
+ such that demographical events occur sequentially, one at the time 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Moran1958,Metz2001,Hardling2003,Alizon2008,Wild2009a"
+
+\end_inset
+
+.
+ Two different demographic events can occur at each timestep:
+\end_layout
+
+\begin_layout Standard
+1) Environmental change: individual patches in environmental state 
+\begin_inset Formula $e$
+\end_inset
+
+ change to state 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ (
+\begin_inset Formula $j\neq i$
+\end_inset
+
+) with rate 
+\begin_inset Formula $s_{e_{j}\rightarrow e_{i}}$
+\end_inset
+
+.
+ Importantly, the environmental state of patches changes independently of
+ one another, so that at equilibrium the probability of encountering a type
+ 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+-patch is given by 
+\begin_inset Formula $f_{e_{i}}=s_{e_{j}\rightarrow e_{i}}/(s_{e_{j}\rightarrow e_{i}}+s_{e_{i}\rightarrow e_{j}})$
+\end_inset
+
+.
+ When the local environment changes, all locally adapted individuals become
+ locally maladapted, whereas all previously locally maladapted individuals
+ become locally adapted.
+\end_layout
+
+\begin_layout Standard
+2) Breeder mortality: each individual experiences a mortality rate 
+\begin_inset Formula $M_{x,ij}$
+\end_inset
+
+ that depends on its age 
+\begin_inset Formula $x\in\{y,s\}$
+\end_inset
+
+ and the match between its phenotype 
+\begin_inset Formula $z_{i}$
+\end_inset
+
+ and the current local environment 
+\begin_inset Formula $e_{j}$
+\end_inset
+
+: a breeder who bears a phenotype matching the local environment 
+\begin_inset Formula $(z_{i}$
+\end_inset
+
+ in environment 
+\begin_inset Formula $e_{j}$
+\end_inset
+
+ with 
+\begin_inset Formula $i=j$
+\end_inset
+
+) has a higher survival probability than a breeder who bears a phenotype
+ that does not match the local environment (
+\begin_inset Formula $i\neq j$
+\end_inset
+
+).
+ For the sake of tractability, we use a rank-order model of breeder replacement
+ and mortality: in case a young breeder dies, a new young breeder is recruited:
+ with probability 
+\begin_inset Formula $h=(1-d)/(1-kd)$
+\end_inset
+
+ by the offspring of a random local breeder and with probability 
+\begin_inset Formula $1-h$
+\end_inset
+
+ by the offspring of a random nonlocal breeder, where 
+\begin_inset Formula $d$
+\end_inset
+
+ denotes the juvenile dispersal rate and 
+\begin_inset Formula $k$
+\end_inset
+
+ the mortality cost of dispersal.
+ The senior breeder is, however, unaffected.
+ By contrast, when a senior breeder dies, the young breeder changes in rank
+ to become the senior breeder, while a new young breeder is again recruited
+ from the offspring of randomly chosen local or nonlocal breeders as described
+ before.
+\end_layout
+
+\begin_layout Subsection
+Evolutionary dynamics
+\end_layout
+
+\begin_layout Standard
+To derive expressions of evolutionary change in the phenotype determination
+ traits 
+\begin_inset Formula $\mathbf{p}$
+\end_inset
+
+ and dispersal 
+\begin_inset Formula $d$
+\end_inset
+
+, we consider a rare mutant which has a slightly different value 
+\begin_inset Formula $\tilde{x}$
+\end_inset
+
+ in one of the traits relative to its neighbour with trait value 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+ and the global trait value 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\Delta W_{\mathbf{a}}(\tilde{x},\hat{x},x)$
+\end_inset
+
+ then be the fitness effect of a focal mutant, where 
+\begin_inset Formula $\mathbf{a}$
+\end_inset
+
+ is a state vector comprising the mutant's phenotype, its local environment
+ and phenotype of other the breeder in the local patch).
+ In the Supplementary Mathematica Sheet we derive an expression for the
+ fitness effect 
+\begin_inset Formula $\Delta W_{\mathbf{a}}(\tilde{x},\hat{x},x)$
+\end_inset
+
+ based on the mutant transition rates between the different classes of individua
+ls.
+ These transition rates are weighed by the corresponding reproductive values
+ as we consider a heterogeneous population 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "for similar approaches, see"
+key "Hardling2003,Alizon2008,Taylor2009,Wild2009a"
+
+\end_inset
+
+.
+ By averaging over all possible states and employing a standard result from
+ inclusive fitness theory 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hamilton1964a,Taylor1996"
+
+\end_inset
+
+, we obtain the following selection gradient 
+\begin_inset Formula $\Delta W_{x}$
+\end_inset
+
+ on phenotype 
+\begin_inset Formula $x$
+\end_inset
+
+ (see the Supplementary Mathematica Sheet)
+\begin_inset Formula 
+\begin{align}
+\Delta W_{x} & =\sum\mathrm{Pr}(\text{state=}\mathbf{a})\nonumber \\
+ & \times\left[\frac{\partial\Delta W_{\mathbf{a}}(\tilde{x},\hat{x},x)}{\partial\tilde{x}}+r_{\mathbf{a}}\frac{\partial\Delta W_{\mathbf{a}}(\tilde{x},\hat{x},x)}{\partial\hat{x}}\right]\Biggl|_{\tilde{x}=\hat{x}=x}.\label{eq:main_dynamic}
+\end{align}
+
+\end_inset
+
+The first term in brackets reflects the fitness effect of a mutant allele
+ borne by the focal breeder with phenotype 
+\begin_inset Formula $\tilde{x}$
+\end_inset
+
+, while the second term reflects the fitness effect of mutant allele borne
+ by the focal's neighbour (having phenotype 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+), weighted by the coefficient of relatedness 
+\begin_inset Formula $r_{\mathbf{a}}$
+\end_inset
+
+ to the focal.
+ Taking relatedness into account is essential, as limited dispersal causes
+ relatives to interact with each other, so that the distribution of offspring
+ phenotypes produced by the focal's neighbour affects their future survival
+ as adults and hence the prospects for the focal's offspring to compete
+ for vacant breeding positions.
+ 
+\end_layout
+
+\begin_layout Standard
+If evolution proceeds slowly, so that an individual's lifespan represents
+ only an infinitesimal fraction of evolutionary time, then a standard result
+ in adaptive dynamics 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g., "
+key "Dieckmann1996,Day2003"
+
+\end_inset
+
+ shows that one can describe the change in trait values over time with the
+ continuous evolutionary time dynamic
+\begin_inset Formula 
+\begin{align}
+\frac{\text{d}}{\text{d}t}\left[\begin{array}{c}
+p_{y1}\\
+p_{y2}\\
+p_{o1}\\
+p_{o2}\\
+d
+\end{array}\right]=(\text{positive constant}) & \times\left[\begin{array}{c}
+\Delta W_{p_{y1}}\\
+\Delta W_{p_{y2}}\\
+\Delta W_{p_{o1}}\\
+\Delta W_{p_{o2}}\\
+\Delta W_{d}
+\end{array}\right],\label{eq:adaptive_dynamic}
+\end{align}
+
+\end_inset
+
+where we assume that pleiotropic mutations which simultaneously affect multiple
+ traits are absent.
+ We can use this dynamic to find singular strategies where the dynamic vanishes.
+ To find these strategies, we iterate the adaptive dynamic above in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:adaptive_dynamic"
+
+\end_inset
+
+) starting from 
+\begin_inset Formula $\mathbf{p}_{t=0}=0.5$
+\end_inset
+
+ and 
+\begin_inset Formula $d=0.5$
+\end_inset
+
+ until evolving traits converged (i.e., values of evolving traits differ by
+ less than 
+\begin_inset Formula $10^{-7}$
+\end_inset
+
+ between consecutive timesteps).
+ During each time step of the iteration, we numerically solved for equilibrium
+ values of patch type frequencies, reproductive values and relatedness for
+ the current values of 
+\begin_inset Formula $\mathbf{p}$
+\end_inset
+
+ and 
+\begin_inset Formula $d$
+\end_inset
+
+ using Euler's method.
+ The outcomes obtained from these numerical iterations are convergence stable
+ by definition, and individual-based simulations revealed that values are
+ also evolutionary stable, provided we assume that mutations occur independently
+ in each strategic variable.
  
 \end_layout
 
@@ -268,43 +751,550 @@ key "Wright1931,Wright1951"
 Results
 \end_layout
 
+\begin_layout Standard
+To disentangle the combined effects of parental age and parental phenotype
+ on offspring phenotoype determination, we first study a baseline model
+ in which parents only have information about their age, whereas they have
+ no information about their own phenotype when producing offspring phenotypes
+ (result 1).
+ Subsequently, we move on to a complete model in which parents have information
+ about both their age and parental phenotype.
+ We refer to a previous study in which we assess a scenario in which parents
+ have information about their own phenotype but not their age 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kuijper2016"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection
-Information about parental age only
+Result 1: Young parents produce more variable mixtures of offspring phenotypes
 \end_layout
 
 \begin_layout Standard
-Figure 1 shows an example of a case in which offspring only have information
- about parental age, yet no information about the parent's phenotype.
- Young and old parents produce only a single type of offspring in case one
- environment is very common (grey areas in Figure 1).
- However, when the encounter rate of environment 1 versus 2 is more similar
- (close to 
-\begin_inset Formula $f_{e_{2}}=0.2$
+For a scenario of limited dispersal (dispersal probability 
+\begin_inset Formula $d\approx0.5$
 \end_inset
 
-), young parents are more likely to produce a mixture of offspring phenotypes
- in comparison to older parents (compare dashed versus dotted lines in Figure
- 1).
- Consequently, as strategies diverge between young and old parents, parental
- age 
-\begin_inset ERT
-status open
+ for a cost of dispersal 
+\begin_inset Formula $k=0.5$
+\end_inset
 
-\begin_layout Plain Layout
+), Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bethedging:age_dependence"
 
+\end_inset
 
-\backslash
-emph{per se}
+ shows the evolved phenotype determination strategies when parents know
+ their age, but not their phenotype.
+ In highly asymmetric environments (i.e., 
+\begin_inset Formula $f_{e_{1}}<0.33$
+\end_inset
+
+ or 
+\begin_inset Formula $f_{e_{1}}>0.66$
+\end_inset
+
+), patches of one environmental state dominate and all parents (regardless
+ of age) produce only the phenotype which matches the commonest environment.
+ However, when encounter rates of 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+ patches are more similar (grey areas around 
+\begin_inset Formula $f_{e_{1}}=0.5$
+\end_inset
+
+ in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bethedging:age_dependence"
+
+\end_inset
+
+A, B), mixtures of offspring phenotypes are produced, in line with previous
+ models on bet-hedging in fluctuating environments 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g.,"
+key "Moran1992,Leimar2005,Salathe2009"
+
+\end_inset
+
+.
+ 
 \end_layout
 
+\begin_layout Standard
+In slowly changing environments, however, age-differences arise in offspring
+ phenotypic mixtures, and younger parents are more likely to produce offspring
+ phenotype mixtures than older parents (grey region in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bethedging:age_dependence"
+
 \end_inset
 
- is informative.
- Why do we find this effect? 
+A).
+ In addition, mixtures produced by younger parents are more variable, relative
+ to those of older parents (i.e., 
+\begin_inset Formula $p_{y}$
+\end_inset
+
+ is always closer to 
+\begin_inset Formula $0.5$
+\end_inset
+
+ relative to 
+\begin_inset Formula $p_{o}$
+\end_inset
+
+).
+ However, we note that these results are highly sensitive to the rate of
+ environmental change (as no age differences are observed in rapidly changing
+ environments (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bethedging:age_dependence"
+
+\end_inset
+
+B)), or when dispersal rates are either higher or lower (
+\begin_inset Formula $d\approx0.8$
+\end_inset
+
+ or 
+\begin_inset Formula $d\approx0.35$
+\end_inset
+
+) (see also Supplemental Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:suppl:age_differences_bethedging"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Result 2: Older parents evolve stronger phenotypic memory
+\end_layout
+
+\begin_layout Standard
+We then consider the evolution of offspring phenotype determination strategies
+ when parents have information about both their own phenotype and their
+ age.
+ As in the previous scenario, Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:lineplot_age_dependence"
+
+\end_inset
+
+ shows that when patches of one environmental state dominate, parents produce
+ only offspring of the phenotype that matches the prevalent environment.
+ For example, when patches of environment 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+ dominate (
+\begin_inset Formula $f_{e_{1}}<0.23$
+\end_inset
+
+ in Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:lineplot_age_dependence"
+
+\end_inset
+
+A, B), only 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ offspring are produced, regardless of parental age and phenotype (as 
+\begin_inset Formula $p_{o1}=p_{y1}=p_{o2}=p_{y2}=0$
+\end_inset
+
+) resulting in a monomorphism.
+ Conversely, when patches of environment 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ dominate (i.e., 
+\begin_inset Formula $f_{e_{1}}>0.77$
+\end_inset
+
+ in Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:lineplot_age_dependence"
+
+\end_inset
+
+A, B) only 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ offspring are produced (as 
+\begin_inset Formula $p_{o1}=p_{y1}=p_{o2}=p_{y2}=1$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+When encounter rates of 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+ patches are more similar, however, parental age and parental phenotype
+ have substantial effects on offspring phenotype determination.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:lineplot_age_dependence"
+
+\end_inset
+
+ shows that old parents are selectively favored to produce offspring bearing
+ the same phenotype as theirs across a broad range of environmental frequencies:
+ old 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ parents produce exclusively 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ offspring when environment 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ patches are relatively rare to extremely common (
+\begin_inset Formula $p_{o1}=1$
+\end_inset
+
+, dashed orange lines in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:lineplot_age_dependence"
+
+\end_inset
+
+A).
+ Similarly, old 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ parents produce exclusively 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ offspring when 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+ patches are relatively rare to extremely common (
+\begin_inset Formula $p_{o2}=0$
+\end_inset
+
+, dashed blue lines in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:lineplot_age_dependence"
+
+\end_inset
+
+B).
+ Hence, old parents transmit their own phenotype to all offspring across
+ a broad range of environmental frequencies.
+\end_layout
+
+\begin_layout Standard
+The situation is strikingly different in young parents: selection favors
+ young 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ parents to exclusively produce offspring bearing the opposite 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ phenotype when 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+ patches are the commonest environmental state (
+\begin_inset Formula $p_{y1}=0$
+\end_inset
+
+ when 
+\begin_inset Formula $f_{e_{1}}<0.5$
+\end_inset
+
+; left-hand side of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:lineplot_age_dependence"
+
+\end_inset
+
+A).
+ Only when 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ patches are more common than 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+ patches (
+\begin_inset Formula $f_{e_{1}}>0.5$
+\end_inset
+
+), we find that young 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ parents produce at least some offspring which bear the parental 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ phenotype 
+\begin_inset Formula $(0<p_{y1}<1$
+\end_inset
+
+).
+ Unless the frequency of 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ patches is very high, however, the fidelity of inheritance is low as young
+ 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ parents produce mixtures of 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ offspring.
+ The reverse applies to young 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ parents, which will exclusively produce offspring bearing the opposite
+ 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ phenotype when 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ patches are the commonest environmental state (
+\begin_inset Formula $p_{y2}=1$
+\end_inset
+
+ when 
+\begin_inset Formula $f_{e_{1}}>0.5$
+\end_inset
+
+; right-hand side in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:lineplot_age_dependence"
+
+\end_inset
+
+B).
+ When 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+ patches are more common than 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ patches, Young 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ parents will produce at least some offspring bearing the parental 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ phenotype.
+ Overall, we conclude that young parents are thus much less likely to transmit
+ their own phenotype to offspring than older parents,  suggesting that selection
+ favors striking age differences in the fidelity of inheritance.
+\end_layout
+
+\begin_layout Subsection
+Result 3: Age differences occur when dispersal is limited and environmental
+ change slow
+\end_layout
+
+\begin_layout Standard
+We then ask how sensitive this age difference is to changes in the dispersal
+ rate and rates of environmental change, as previous models predicted these
+ to be key factors in the evolution of parental effects 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Uller2008,Leimar2015,English2015,Kuijper2016"
+
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:po1_py1"
+
+\end_inset
+
+ shows the difference in the fidelity with which old versus young 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ parents transmit 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ phenotypes to offspring (see Supplementary Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:suppl:full_model:po2_py2"
+
+\end_inset
+
+ for age differences between old and young 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ parents).
+ First, we find that age differences are selectively favored when i) asymmetries
+ in the prevalence of environment 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ versus 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+ patches are not too extreme; ii) dispersal is limited (due to high costs
+ of dispersal 
+\begin_inset Formula $k$
+\end_inset
+
+); and iii) rates of environmental change 
+\begin_inset Formula $\bar{s}$
+\end_inset
+
+ are relatively slow.
+ Second, whenever age-differences in phenotype transmission occur, old 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ parents are always more likely to transmit their own (
+\begin_inset Formula $z_{1}$
+\end_inset
+
+) phenotype to offspring relative to young parents (resulting in 
+\begin_inset Formula $p_{o1}-p_{y1}\geq0$
+\end_inset
+
+ in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:po1_py1"
+
+\end_inset
+
+).
+ Consequently, this generalizes the finding from Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:lineplot_age_dependence"
+
+\end_inset
+
+, showing that phenotypic inheritance is much likely to occur in older rather
+ than younger parents.
 \end_layout
 
 \begin_layout Section
 Discussion
+\end_layout
+
+\begin_layout Enumerate
+Explain phenotype-independent (difficult to do)
+\end_layout
+
+\begin_layout Enumerate
+Explain phenotype-dependent strategies
+\end_layout
+
+\begin_layout Enumerate
+When are these things relevant? (maybe merge with 1 and 2)
+\end_layout
+
+\begin_layout Enumerate
+Experiments to test this?
+\end_layout
+
+\begin_layout Enumerate
+Other consequences: adaptation, cooperative breeding?
+\end_layout
+
+\begin_layout Enumerate
+Relaxing parameters.
+ Rank-order model: still similar results.
+ Multiple phenotypes, still similar results.
+\end_layout
+
+\begin_layout Enumerate
+Summary
+\end_layout
+
+\begin_layout Standard
+For example, this may reflect a scenario where expression of certain hormones
+ in the embryo occurs independently of the hormone titers in the parent
+ (for example when the placenta is impermeable to these hormones for some
+ specific reason; 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Crespi2004"
+
+\end_inset
+
+).
+ At the same time, however, the placenta may be permeable to other factors
+ that depend on parental age, such as ..., which might modulate offspring hormone
+ expression.
+ Consequently, nongenetic inheritance of hormone titers and phenotypic memory
+ is impossible in such a scenario (as offspring hormones are produced independen
+tly of parental hormones), yet parental age and proxies thereof may still
+ modulate the offspring phenotypes produced.
 \end_layout
 
 \begin_layout Standard
@@ -350,7 +1340,7 @@ key "Fischer2014"
 \end_layout
 
 \begin_layout Standard
-- mention laurel's study\SpecialChar \@.
+- mention laurel's study\SpecialChar endofsentence
 
 \end_layout
 
@@ -401,8 +1391,594 @@ clearpage
 Figure captions
 \end_layout
 
+\begin_layout Paragraph
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bethedging:age_dependence"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Parental phenotype determination strategies in slowly (panel A) and rapidly
+ fluctuating (panel B) environments.
+ Parameters: dispersal cost 
+\begin_inset Formula $k=0.5$
+\end_inset
+
+, mortality rates: 
+\begin_inset Formula $M_{o11}=M_{y11}=M_{o22}=M_{y22}=1.0$
+\end_inset
+
+, 
+\begin_inset Formula $M_{o12}=M_{y12}=M_{o21}=M_{y21}=2.0$
+\end_inset
+
+.
+ Average rate of change in panel A is 
+\begin_inset Formula $\bar{s}=\log_{10}(s_{e_{1}\rightarrow e_{2}})+\log_{10}(s_{e_{2}\rightarrow e_{1}})=-0.98$
+\end_inset
+
+, and in panel B 
+\begin_inset Formula $\bar{s}=0.14$
+\end_inset
+
+.
+ See also Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:suppl:age_differences_bethedging"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:lineplot_age_dependence"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Parental phenotype determination strategies when parents have information
+ about their phenotype and age, while varying the frequency 
+\begin_inset Formula $f_{e_{1}}$
+\end_inset
+
+ of environment 
+\begin_inset Formula $1$
+\end_inset
+
+ versus 
+\begin_inset Formula $2$
+\end_inset
+
+ patches.
+ Panel A: young and old phenotype 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ parents.
+ Panel B: young and old phenotype 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ parents.
+ Parameters: dispersal cost 
+\begin_inset Formula $k=0.5$
+\end_inset
+
+, mortality rates: 
+\begin_inset Formula $M_{o11}=M_{y11}=M_{o22}=M_{y22}=1.0$
+\end_inset
+
+, 
+\begin_inset Formula $M_{o12}=M_{y12}=M_{o21}=M_{y21}=2.0$
+\end_inset
+
+.
+ Average rate of change is 
+\begin_inset Formula $\bar{s}=0.98$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:po1_py1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Difference 
+\begin_inset Formula $\Delta p_{1}=p_{o1}-p_{y1}$
+\end_inset
+
+ between old and young 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ mothers in the proportion of offspring produced with a 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ phenotype.
+ Both increasing costs of dispersal 
+\begin_inset Formula $k$
+\end_inset
+
+ and slow rates of environmental change are highly conducive to the evolution
+ of age-differences in phenotypic inheritance.
+ As 
+\begin_inset Formula $\Delta p_{1}\geq0$
+\end_inset
+
+ for all parameters shown, older mothers always have a higher fidelity of
+ inheritance than younger mothers.
+ See Supplementary Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:suppl:full_model:po2_py2"
+
+\end_inset
+
+ for the difference between old and young 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ mothers, which reflects a mirror image of the current figure.
+ Parameters: mortality rates: 
+\begin_inset Formula $M_{o11}=M_{y11}=M_{o22}=M_{y22}=1.0$
+\end_inset
+
+, 
+\begin_inset Formula $M_{o12}=M_{y12}=M_{o21}=M_{y21}=2.0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figs/age_only_bethedge/bethedge_lineplot.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bethedging:age_dependence"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figs/matage_pij/matage_lineplot_ms.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:full_model:lineplot_age_dependence"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figs/matage_pij/levelplot_diff_p1_ms.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:full_model:po1_py1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{equation}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{table}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*
+\backslash
+theequation{S
+\backslash
+arabic{equation}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*
+\backslash
+theHsection{S
+\backslash
+arabic{section}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*
+\backslash
+thesection{S
+\backslash
+arabic{section}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*
+\backslash
+thefigure{S
+\backslash
+arabic{figure}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*
+\backslash
+theHfigure{S
+\backslash
+arabic{figure}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*
+\backslash
+thetable{S
+\backslash
+arabic{table}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\backslash
+Large{Supplementary Information}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Figures
+
+\lang british
+Supplementary Figures
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figs/age_only_bethedge/overview_age_dependent_bethedge.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang british
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Age-differences in the probability of producing 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ offspring (when information about parental phenotypes is absent) occur
+ only in a limited range of conditions: dispersal is intermediate and the
+ rate of environmental change is slow.
+ Asymmetries occur due to rounding.
+ Parameters: mortality rates: 
+\begin_inset Formula $M_{o11}=M_{y11}=M_{o22}=M_{y22}=1.0$
+\end_inset
+
+, 
+\begin_inset Formula $M_{o12}=M_{y12}=M_{o21}=M_{y21}=2.0$
+\end_inset
+
+.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:suppl:age_differences_bethedging"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figs/matage_pij/levelplot_diff_p2_ms.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:suppl:full_model:po2_py2"
+
+\end_inset
+
+Difference 
+\begin_inset Formula $\Delta p_{2}=p_{o2}-p_{y2}$
+\end_inset
+
+ between old and young 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ mothers in the proportion of offspring produced with a 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ phenotype.
+ 
+\begin_inset Formula $\Delta p_{2}$
+\end_inset
+
+ is either zero or negative, as 
+\begin_inset Formula $p_{i2}$
+\end_inset
+
+ reflects the proportion of 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ offspring produced by a phenotype 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ parent.
+ Similar to to Figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:po1_py1"
+
+\end_inset
+
+, old mothers are either always more likely to produce their own phenotype
+ (
+\begin_inset Formula $z_{2}$
+\end_inset
+
+) relative to younger mothers, or old and young produce identical mixtures
+ of offspring phenotypes (red areas).
+ Parameters: mortality rates: 
+\begin_inset Formula $M_{o11}=M_{y11}=M_{o22}=M_{y22}=1.0$
+\end_inset
+
+, 
+\begin_inset Formula $M_{o12}=M_{y12}=M_{o21}=M_{y21}=2.0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

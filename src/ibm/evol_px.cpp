@@ -124,18 +124,16 @@ void init_pop()
     // obtain a seed from current nanosecond count
 	seed = get_nanoseconds();
 
-    // set the seed to the random number generator
-    // stupidly enough, this can only be done by setting
-    // a shell environment parameter
-    stringstream s;
-    s << "GSL_RNG_SEED=" << setprecision(10) << seed;
-    putenv(const_cast<char *>(s.str().c_str()));
-
     // set up the random number generators
-    // (from the gnu gsl library)
+    // (from the GNU gsl library)
     gsl_rng_env_setup();
     T = gsl_rng_default;
     r = gsl_rng_alloc(T);
+
+    // set the random seed
+    // so that we repeat the simulation in case everything
+    // goes awry
+    gsl_rng_set(r, seed);
 
     // initialize patch state counters and set them to 0
     for (int envt_i = 0; envt_i < 2; ++envt_i)
@@ -410,6 +408,9 @@ void write_parameters()
                 << "runtime;" << total_time << endl;
 }
 
+// switch a patch's environmental state
+// which involves also changing all the numbers of maladapted
+// and adapted individuals
 void switch_patch_state(size_t patch_envt, size_t sen_adapted, size_t jun_adapted)
 {
     // sample a random patch that fulfills the conditions

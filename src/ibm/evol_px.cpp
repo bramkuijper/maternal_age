@@ -24,16 +24,16 @@ gsl_rng_type const * T; // gnu scientific library rng type
 gsl_rng *r; // gnu scientific rng 
 
 const size_t Npatch = 4000; 
-const size_t numgen = 80000;
+unsigned long int numgen = 1e10; // maximum number of generations
 int sample = 20;
 double d0 = 0.01; //some starting values
 double h0 = 0.01;
 
 int seed = -1; // the random seed
 time_t total_time;  // track the total time the simulation is running
-size_t generation = 0; // track the current generation (for debugging only)
+unsigned long int generation = 0; // track the current generation (for debugging only)
 
-size_t skip2 = numgen; // intervals of data output
+unsigned long int skip = 1e6; // intervals of data output
 
 double envt_switch[2] = {0,0}; // patch state switch rate
 double k = 0.001; // cost of dispersal
@@ -266,7 +266,7 @@ void create_kid(Individual &mother, Individual &Kid)
         Kid.p20[allele_i] = mut_h(mother.p20[allele_i]);
     }
 
-    kid.is_senior = false;
+    Kid.is_senior = false;
 }
 
 // do the stats on the data
@@ -676,125 +676,118 @@ int main(int argc, char **argv)
     double prob; // actual event probability sampled from 
                 // the cumulative prob distribution
 
-    // set up as a markovian process of numgen^2 timesteps
-    // if we would have used a single variable then we would 
-    // run into problems as the minimum specification of the maximum size
-    // of size_t = ~65500
     for (generation = 0; generation < numgen; ++generation)
     {
-        for (size_t generation2 = 0; generation2 < numgen; ++generation2)
+        // generate cumulative prob. distribution of possible
+        // events
+        double sum_probs = 0;
+        size_t prob_count = 0;
+
+        // loop through the different patch types 
+        for (size_t patch_envt = 0; patch_envt < 2; ++patch_envt)
         {
-            // generate cumulative prob. distribution of possible
-            // events
-            double sum_probs = 0;
-            size_t prob_count = 0;
-
-            // loop through the different patch types 
-            for (size_t patch_envt = 0; patch_envt < 2; ++patch_envt)
+            // senior adapted yes/no
+            for (size_t sen_adapted = 0; sen_adapted < 2; ++sen_adapted)
             {
-                // senior adapted yes/no
-                for (size_t sen_adapted = 0; sen_adapted < 2; ++sen_adapted)
+                // junior adapted yes/no
+                for (size_t jun_adapted = 0; jun_adapted < 2; ++jun_adapted)
                 {
-                    // junior adapted yes/no
-                    for (size_t jun_adapted = 0; jun_adapted < 2; ++jun_adapted)
-                    {
-                        // probability that a patch switches state
-                        sum_probs += envt_switch[patch_envt] 
-                            * Npatches[patch_envt][sen_adapted][jun_adapted];
+                    // probability that a patch switches state
+                    sum_probs += envt_switch[patch_envt] 
+                        * Npatches[patch_envt][sen_adapted][jun_adapted];
 
-                        probs[prob_count++] = sum_probs; 
+                    probs[prob_count++] = sum_probs; 
 
 
-                        // mortality young individual
-                        sum_probs += (
-                                    jun_adapted == 0 ? 
-                                        (1.0 / (1.0 - c_young[patch_envt])) 
-                                        : 
-                                        (1.0 / (1.0 - C_young[patch_envt]))
-                                    ) 
-                            * Npatches[patch_envt][sen_adapted][jun_adapted];
-                        
-                        probs[prob_count++] = sum_probs; 
+                    // mortality young individual
+                    sum_probs += (
+                                jun_adapted == 0 ? 
+                                    (1.0 / (1.0 - c_young[patch_envt])) 
+                                    : 
+                                    (1.0 / (1.0 - C_young[patch_envt]))
+                                ) 
+                        * Npatches[patch_envt][sen_adapted][jun_adapted];
+                    
+                    probs[prob_count++] = sum_probs; 
 
-                        // mortality old individual
-                        sum_probs += (
-                                    sen_adapted == 0 ? 
-                                        (1.0 / (1.0 - c_old[patch_envt])) 
-                                        : 
-                                        (1.0 / (1.0 - C_old[patch_envt]))
-                                    ) 
-                            * Npatches[patch_envt][sen_adapted][jun_adapted];
-                        
-                        probs[prob_count++] = sum_probs; 
+                    // mortality old individual
+                    sum_probs += (
+                                sen_adapted == 0 ? 
+                                    (1.0 / (1.0 - c_old[patch_envt])) 
+                                    : 
+                                    (1.0 / (1.0 - C_old[patch_envt]))
+                                ) 
+                        * Npatches[patch_envt][sen_adapted][jun_adapted];
+                    
+                    probs[prob_count++] = sum_probs; 
 
-                        assert(prob_count <= nprobs);
-                    }
+                    assert(prob_count <= nprobs);
                 }
             }
+        }
 
-            // decide which event will happen
-            //
-            // draw value from cumul distribution
-            prob = gsl_rng_uniform(r) *  sum_probs;
+        // decide which event will happen
+        //
+        // draw value from cumul distribution
+        prob = gsl_rng_uniform(r) *  sum_probs;
 
-            prob_count = 0;
+        prob_count = 0;
 
-            // variable to break out of all the loops
-            done = false;
+        // variable to break out of all the loops
+        done = false;
 
-            // locate the event
-            // in the cumulative distribution
-            for (size_t patch_envt = 0; patch_envt < 2; ++patch_envt)
+        // locate the event
+        // in the cumulative distribution
+        for (size_t patch_envt = 0; patch_envt < 2; ++patch_envt)
+        {
+            if (done)
+            {
+                break;
+            }
+            for (size_t sen_adapted = 0; sen_adapted < 2; ++sen_adapted)
             {
                 if (done)
                 {
                     break;
                 }
-                for (size_t sen_adapted = 0; sen_adapted < 2; ++sen_adapted)
+                for (size_t jun_adapted = 0; jun_adapted < 2; ++jun_adapted)
                 {
-                    if (done)
+                    if (prob <= probs[prob_count])
                     {
+                        switch_patch_state(patch_envt, sen_adapted, jun_adapted);
+                        done = true;
                         break;
                     }
-                    for (size_t jun_adapted = 0; jun_adapted < 2; ++jun_adapted)
+
+                    ++prob_count;
+
+                    // mortality young individual
+                    if (prob <= probs[prob_count])
                     {
-                        if (prob <= probs[prob_count])
-                        {
-                            switch_patch_state(patch_envt, sen_adapted, jun_adapted);
-                            done = true;
-                            break;
-                        }
-
-                        ++prob_count;
-
-                        // mortality young individual
-                        if (prob <= probs[prob_count])
-                        {
-                            mortality(patch_envt, sen_adapted, jun_adapted, false);
-                            done = true;
-                            break;
-                        }
-
-                        ++prob_count;
-
-                        // mortality old individual
-                        if (prob <= probs[prob_count])
-                        {
-                            mortality(patch_envt, sen_adapted, jun_adapted, true);
-                            done = true;
-                            break;
-                        }
-                        
-                        ++prob_count;
+                        mortality(patch_envt, sen_adapted, jun_adapted, false);
+                        done = true;
+                        break;
                     }
+
+                    ++prob_count;
+
+                    // mortality old individual
+                    if (prob <= probs[prob_count])
+                    {
+                        mortality(patch_envt, sen_adapted, jun_adapted, true);
+                        done = true;
+                        break;
+                    }
+                    
+                    ++prob_count;
                 }
-            } // end for patch_envt
-    
-            if (generation2 % skip2 == 0)
-            {
-                write_data();
             }
-        } //end for size_t generation2
+        } // end for patch_envt
+
+        if (generation % skip == 0)
+        {
+            write_data();
+        }
     } // end for size_t _generation
 
     write_data();

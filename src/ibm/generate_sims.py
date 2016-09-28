@@ -21,8 +21,8 @@ C2 = 0
 C3 = 0
 C4 = 0
 
-#exe = "./xevol_px"
-exe = "./xevol_p_bethedge"
+exe = "./xevol_px"
+#exe = "./xevol_p_bethedge"
 #exe = "/home/uccoaku/maternal_age/src/ibm/xevol_p_bethedge"
 
 counter = 0

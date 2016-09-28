@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-./xevol_p_bethedge 0.0837274 0.130958 0.5 0.5 0 0 0.5 0.5 0 0      0.5      0.01 0.01    0.5 0.5
+./xevol_px 0.0837274 0.130958 0.5 0.5 0 0 0.5 0.5 0 0      0.5      0.01 0.01    0.5 0.5
 
 #    envt_switch[0] = atof(argv[1]);
 #    envt_switch[1] = atof(argv[2]);

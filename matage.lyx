@@ -91,29 +91,28 @@
 \begin_body
 
 \begin_layout Title
-Adaptive Parental-Age Effects
+Older and Wiser: Parental Effects Evolve from Older Parents
 \end_layout
 
 \begin_layout Author
 Bram Kuijper
-\begin_inset Formula $^{1,2,3,4}$
+\begin_inset Formula $^{1,3}$
 \end_inset
 
  & Rufus A.
  Johnstone
-\begin_inset Formula $^{5,6}$
+\begin_inset Formula $^{2,4}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Abstract
-While an accumulating number of studies considers 
-\end_layout
-
-\begin_layout Abstract
-However, no parent is exactly the same, raising the question how these parental
- effects vary with parental age or condition.
+Parental information transmitted via parental effects can inform offspring
+ about the environment they are likely to face, allowing them to develop
+ an appropriate phenotypic response.
+ However, no parent is exactly the same, raising the question how these
+ parental effects vary with parental age or condition.
  Here, we model the evolution of age-dependent parental effects in a population
  experiencing a spatiotemporally fluctuating environment.
  Overall, we predict that parental effects should vary strongly over a parent's
@@ -132,32 +131,21 @@ However, no parent is exactly the same, raising the question how these parental
 \end_layout
 
 \begin_layout Standard
-1) College of Life and Environmental Sciences, University of Exeter, Penryn
+1) Environment and Sustainability Institute, University of Exeter, Penryn
  Campus, Penryn Cornwall, TR10 9FE United Kingdom
 \end_layout
 
 \begin_layout Standard
-2) Centre for Mathematics and Physics in the Life Sciences and EXperimental
- Biology (CoMPLEX), University College London, Gower Street, London, WC1E
- 6BT, United Kingdom
-\end_layout
-
-\begin_layout Standard
-3) Department of Genetics, Evolution and Environment, University College
- London, Gower Street, London, WC1E 6BT, United Kingdom
-\end_layout
-
-\begin_layout Standard
-4) a.l.w.kuijper@exeter.ac.uk
-\end_layout
-
-\begin_layout Standard
-5) Department of Zoology, University of Cambridge, Downing Street, Cambridge
+2) Department of Zoology, University of Cambridge, Downing Street, Cambridge
  CB2 3EJ, United Kingdom
 \end_layout
 
 \begin_layout Standard
-6) raj1003@hermes.cam.ac.uk
+3) a.l.w.kuijper@exeter.ac.uk
+\end_layout
+
+\begin_layout Standard
+4) raj1003@hermes.cam.ac.uk
 \end_layout
 
 \begin_layout Section
@@ -239,9 +227,14 @@ key "Benton2008,Stamps2010,Dingemanse2010"
  How these individual differences in state affect the evolution of parental
  effects and, in turn, the nongenetic transmission of phenotypes is surprisingly
  poorly understood.
- Here we focus on parental age as one of the most striking axes of variation
- among parents: indeed, numerous empirical studies have shown that parental
- age at conception can have long-term fitness effects on offspring 
+ 
+\end_layout
+
+\begin_layout Standard
+Here we focus on parental age as one of the most striking axes of variation
+ among parents that might influence offspring phenotypes: indeed, numerous
+ empirical studies have shown that parental age at conception can have long-term
+ fitness effects on offspring 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Cannon2009,Torres2011,Eisenberg2012,Schroeder2015"
@@ -256,9 +249,10 @@ key "Benton2008"
 \end_inset
 
 .
- So far, however, parental age has only been assumed to have deleterious
- effects on offspring, as older parents bear more mutations and shorter
- telomeres 
+ Existing predictions about these parental-age effects focus exclusively,
+ however, on the deleterious consequences of increased parental age on offspring
+ fitness, for example through the inheritance of accumulated mutations or
+ shorter telomeres 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "e.g.,"
@@ -267,54 +261,51 @@ key "Moorad2016,Heuvel2016"
 \end_inset
 
 .
- It is not unlikely, however, that a parent's age may also contain information
- about the 
-\end_layout
-
-\begin_layout Standard
-Whether parental age can also have adaptive consequences to offspring is
- yet to be explored.
- Assessing the role of age is particularly important, as 
-\end_layout
-
-\begin_layout Standard
-whether parental effects based on parental age can 
-\end_layout
-
-\begin_layout Standard
+ Yet, these studies overlook that a parental phenotype can also have other
+ than mere deleterious consequences to young: this is particularly the case
+ in the context of `adaptive parental effects' 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Marshall2007a,Galloway2007"
+key "Marshall2007a,Galloway2007,Herman_2011,Burgess2014,Lampei2017"
 
 \end_inset
 
- as they inform offspring about the state of the environment.
+, where aspects of a parent's phenotype informs offspring about their future
+ environment.
+ Consequently, this raises the question whether a parent's age is a beneficial
+ form of information which offspring can exploit to enhance their survival.
  
 \end_layout
 
 \begin_layout Standard
-To assess how parental age impacts on phenotypic inheritance, we build on
- previous models in which development is modeled as a switching device that
- integrates different inputs in offspring phenotype development 
+Here we therefore model how parental age impacts on the evolution of parental
+ effects, by focusing on a population with a tractable age structure of
+ young and old individuals, who live in a spatiotemporally variable environment.
+ We build on previous models of offspring phenotype determination, by considerin
+g development as a switching device that integrates different inputs (`cues')
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Leimar2015,English2015,Kuijper2016"
+key "Leimar2015,English2015,Kuijper2016,McNamara2016"
 
 \end_inset
 
 .
- For the sake of brevity, the current paper chiefly focuses on two types
- of parental cues, (i) the parental phenotype and (ii) parental age, as
- the evolution of genetic cues has been dealt with elsewhere 
+ Because of our focus on parental effects, one cue on offspring phenotype
+ determation is the parental phenotype.
+ In addition, we then consider how parental age potentially modulates the
+ informational value of the parental phenotype.
+ We refer the reader to 
 \begin_inset CommandInset citation
-LatexCommand citep
-key "Leimar2006,Leimar2015,Dall2015"
+LatexCommand citet
+key "Kuijper2016"
 
 \end_inset
 
-.
- We then assess to assess whether phenotypic inheritance differs between
- older and younger parents
+ for a scenario that considers the evolution of parental effects in the
+ absence of age structure.
+ We show that parental age substantially modules the evolution of parental
+ effects.
 \end_layout
 
 \begin_layout Section
@@ -1754,7 +1745,7 @@ name "fig:full_model:lineplot_age_dependence"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1794,7 +1785,7 @@ name "fig:full_model:po1_py1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center

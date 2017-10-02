@@ -753,11 +753,11 @@ Results
 \end_layout
 
 \begin_layout Subsection
-Result 1: Older parents more likely to transmit phenotypes to offspring
+Result 1: Older parents are more likely to transmit phenotypes to offspring
 \end_layout
 
 \begin_layout Standard
-We then consider the evolution of offspring phenotype determination strategies
+We consider the evolution of offspring phenotype determination strategies
  when parents have information about both their own phenotype and their
  age.
  As in the previous scenario, Figure 
@@ -1013,7 +1013,7 @@ Overall, we conclude that young parents are thus much less likely to transmit
 \end_layout
 
 \begin_layout Subsection
-Result 3: Age differences occur when dispersal is limited and environmental
+Result 2: Age differences occur when dispersal is limited and environmental
  change slow
 \end_layout
 
@@ -1742,49 +1742,6 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figs/age_only_bethedge/bethedge_lineplot.pdf
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:bethedging:age_dependence"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
 	filename figs/matage_pij/matage_lineplot_ms.pdf
 	scale 50
 
@@ -1820,7 +1777,7 @@ name "fig:full_model:lineplot_age_dependence"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1860,7 +1817,7 @@ name "fig:full_model:po1_py1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center

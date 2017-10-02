@@ -91,7 +91,7 @@
 \begin_body
 
 \begin_layout Title
-Older, but wiser: why older parents are more informative to offspring
+Adaptive Parental-Age Effects
 \end_layout
 
 \begin_layout Author
@@ -169,7 +169,7 @@ Organisms rely on various sources of developmental information to align
  their phenotype with the prevalent environment 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "McNamara2010,Shea2011,Dall2015"
+key "Shea2011,Dall2015,McNamara2016"
 
 \end_inset
 
@@ -200,39 +200,33 @@ key "Mousseau1998b,Uller2008,Danchin2011"
 \end_inset
 
 ).
- Moreover, parental effects can lead to phenotypic inheritance, where phenotypes
- are transmitted over multiple generations via other means than through
- the inheritance of DNA basepair variations, but rather through the inheritance
- of epimutations 
+ As parental effects can potentially lead to the nongenetic inheritance
+ of phenotypes across generations, they have received substantial attention
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Heard2014"
-
-\end_inset
-
-, maternal hormones or antibodies 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Groothuis2008,Boulinier2008"
-
-\end_inset
-
- or other factors 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Jablonka2009,Danchin2011"
+before "e.g.,"
+key "Jablonka2009,Daxinger2012,Chen2016"
 
 \end_inset
 
 .
- Understanding the ecological and social conditions in which these parental
- effects evolve is thus key to understand when and where phenotypic memory
- is important, if at all.
+ Indeed, there is now a substantial body of predictions that specify the
+ ecological and social conditions which favor the evolution of parental
+ effects 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g.,"
+key "Rivoire2014,Kuijper2015,Leimar2015,Uller2015,Proulx_2017"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-A major problem for the study of parental effects is, however, that no parent
- is exactly the same.
+A major problem for existing predictions about parental effects is, however,
+ that no parent is exactly the same.
  Rather, parents vary in a multitude of factors such as age, resource level,
  experience, or other relevant state variables 
 \begin_inset CommandInset citation
@@ -243,25 +237,11 @@ key "Benton2008,Stamps2010,Dingemanse2010"
 
 .
  How these individual differences in state affect the evolution of parental
- effects and, in turn, the prevalence of nongenetic inheritance is surprisingly
+ effects and, in turn, the nongenetic transmission of phenotypes is surprisingly
  poorly understood.
- While there is now a substantial body of predictions about the ecological
- conditions favoring parental effects 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Rivoire2014,Kuijper2015,Kuijper2016,English2015,Leimar2015,Uller2015,Proulx2015"
-
-\end_inset
-
-, these models generally consider scenarios where parents only differ in
- the level of adaptation to the environment, yet other differences in state
- are absent.
-\end_layout
-
-\begin_layout Standard
-One major component of an individual's state is its age.
- Indeed, numerous empirical studies have shown that parental age at conception
- can have long-term fitness effects on offspring 
+ Here we focus on parental age as one of the most striking axes of variation
+ among parents: indeed, numerous empirical studies have shown that parental
+ age at conception can have long-term fitness effects on offspring 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Cannon2009,Torres2011,Eisenberg2012,Schroeder2015"
@@ -276,20 +256,46 @@ key "Benton2008"
 \end_inset
 
 .
- Most studies focus exclusively, however, on deleterious effects of parental
- senesence on offspring fitness, due to mutation accumulation and telemore
- shortening.
- Yet, the more general question, whether offspring gain something from having
- information about parental age, and whether offspring born from parents
- of different age should evolve a different sensitivity to parental effects
- has not been explored.
+ So far, however, parental age has only been assumed to have deleterious
+ effects on offspring, as older parents bear more mutations and shorter
+ telomeres 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g.,"
+key "Moorad2016,Heuvel2016"
+
+\end_inset
+
+.
+ It is not unlikely, however, that a parent's age may also contain information
+ about the 
+\end_layout
+
+\begin_layout Standard
+Whether parental age can also have adaptive consequences to offspring is
+ yet to be explored.
+ Assessing the role of age is particularly important, as 
+\end_layout
+
+\begin_layout Standard
+whether parental effects based on parental age can 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marshall2007a,Galloway2007"
+
+\end_inset
+
+ as they inform offspring about the state of the environment.
+ 
 \end_layout
 
 \begin_layout Standard
 To assess how parental age impacts on phenotypic inheritance, we build on
- previous models in which development is modeled as a switching device (see
- Fig 1) that integrates different inputs in offspring phenotype development
- 
+ previous models in which development is modeled as a switching device that
+ integrates different inputs in offspring phenotype development 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Leimar2015,English2015,Kuijper2016"
@@ -298,7 +304,7 @@ key "Leimar2015,English2015,Kuijper2016"
 
 .
  For the sake of brevity, the current paper chiefly focuses on two types
- of parental cues, (i) the parental phenotype and (ii) parental age, while
+ of parental cues, (i) the parental phenotype and (ii) parental age, as
  the evolution of genetic cues has been dealt with elsewhere 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -307,7 +313,8 @@ key "Leimar2006,Leimar2015,Dall2015"
 \end_inset
 
 .
- We assess whether parental age can modulate 
+ We then assess to assess whether phenotypic inheritance differs between
+ older and younger parents
 \end_layout
 
 \begin_layout Section
@@ -315,8 +322,8 @@ The model
 \end_layout
 
 \begin_layout Standard
-We focus on an asexual population distributed over infinitely many patches
- that are connected by juvenile dispersal 
+We focus on an asexual population distributed over infinitely many patches,
+ which are connected by juvenile dispersal 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "see also"
@@ -334,7 +341,16 @@ key "Wright1931,Wright1951"
 \end_inset
 
 .
- Each patch contains one young breeder (subscript 
+ Each patch is inhabited by 
+\begin_inset Formula $n=2$
+\end_inset
+
+ individuals
+\end_layout
+
+\begin_layout Standard
+To introduce age-structure in this model, we consider that each patch contains
+ one young breeder (subscript 
 \begin_inset Formula $y$
 \end_inset
 
@@ -752,22 +768,29 @@ reference "eq:adaptive_dynamic"
 Results
 \end_layout
 
+\begin_layout Standard
+We summarize below how the inheritance strategies of old and young individuals
+ vary across the parameters of our model, notably (i) the relative frequency
+ of both environments, (ii) the average rate of environmental 
+\end_layout
+
 \begin_layout Subsection
 Result 1: Older parents are more likely to transmit phenotypes to offspring
 \end_layout
 
 \begin_layout Standard
-We consider the evolution of offspring phenotype determination strategies
- when parents have information about both their own phenotype and their
- age.
- As in the previous scenario, Figure 
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:full_model:lineplot_age_dependence"
 
 \end_inset
 
- shows that when patches of one environmental state dominate, parents produce
+ 
+\end_layout
+
+\begin_layout Standard
+shows that when patches of one environmental state dominate, parents produce
  only offspring of the phenotype that matches the prevalent environment.
  For example, when patches of environment 
 \begin_inset Formula $e_{2}$
@@ -1525,52 +1548,6 @@ Figure captions
 Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:bethedging:age_dependence"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Parental phenotype determination strategies in slowly (panel A) and rapidly
- fluctuating (panel B) environments.
- Parameters: dispersal cost 
-\begin_inset Formula $k=0.5$
-\end_inset
-
-, mortality rates: 
-\begin_inset Formula $M_{o11}=M_{y11}=M_{o22}=M_{y22}=1.0$
-\end_inset
-
-, 
-\begin_inset Formula $M_{o12}=M_{y12}=M_{o21}=M_{y21}=2.0$
-\end_inset
-
-.
- Average rate of change in panel A is 
-\begin_inset Formula $\bar{s}=\log_{10}(s_{e_{1}\rightarrow e_{2}})+\log_{10}(s_{e_{2}\rightarrow e_{1}})=-0.98$
-\end_inset
-
-, and in panel B 
-\begin_inset Formula $\bar{s}=0.14$
-\end_inset
-
-.
- See also Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:suppl:age_differences_bethedging"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Paragraph
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
 reference "fig:full_model:lineplot_age_dependence"
 
 \end_inset
@@ -1777,7 +1754,7 @@ name "fig:full_model:lineplot_age_dependence"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1817,7 +1794,7 @@ name "fig:full_model:po1_py1"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1988,75 +1965,10 @@ Supplementary Figures
 \end_layout
 
 \begin_layout Standard
-
-\lang british
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename figs/age_only_bethedge/overview_age_dependent_bethedge.pdf
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\lang british
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Age-differences in the probability of producing 
-\begin_inset Formula $z_{1}$
-\end_inset
-
- offspring (when information about parental phenotypes is absent) occur
- only in a limited range of conditions: dispersal is intermediate and the
- rate of environmental change is slow.
- Asymmetries occur due to rounding.
- Parameters: mortality rates: 
-\begin_inset Formula $M_{o11}=M_{y11}=M_{o22}=M_{y22}=1.0$
-\end_inset
-
-, 
-\begin_inset Formula $M_{o12}=M_{y12}=M_{o21}=M_{y21}=2.0$
-\end_inset
-
-.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:suppl:age_differences_bethedging"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center

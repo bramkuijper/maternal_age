@@ -30,7 +30,7 @@ the_data = pd.read_csv(datafile, sep=";")
 the_data["x1"] = 1 - the_data["x2"]
 the_data["diffp1"] = the_data["p11"] - the_data["p10"]
 the_data["diffp2"] = the_data["p21"] - the_data["p20"]
-the_data = the_data.sort(["y2","x1"], ascending=[0,0])
+the_data = the_data.sort_values(["y2","x1"], ascending=[0,0])
 
 # function to remove tiny, irrelevant variations
 # due to numerical solving

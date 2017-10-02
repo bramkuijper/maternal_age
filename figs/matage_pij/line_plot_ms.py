@@ -36,7 +36,7 @@ the_data = pd.read_csv(datafile, sep=";")
 the_data["x1"] = 1.0 - the_data["x2"]
 
 sub = the_data[(the_data["k"] == 0.5) & (the_data["y2"] == -1.02)]
-sub = sub.sort(["x1"])
+sub = sub.sort_values(["x1"])
 
 # initialize the plot
 ax = plt.subplot(gs[0, 0])
@@ -111,6 +111,6 @@ plt.figtext(x = 0.35,
         fontsize=15)
 
 plt.tight_layout()
-graphtype = "svg"
+graphtype = "pdf"
 graphname = "matage_lineplot_ms." + graphtype
 plt.savefig(graphname,format=graphtype, bbox_inches="tight")

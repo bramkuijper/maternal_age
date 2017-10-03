@@ -91,7 +91,7 @@
 \begin_body
 
 \begin_layout Title
-Older and Wiser: Parental Effects Evolve from Older Parents
+Older, But Wiser: How Adaptive Parental Effects Improve With Parental Age
 \end_layout
 
 \begin_layout Author
@@ -313,8 +313,8 @@ The model
 \end_layout
 
 \begin_layout Standard
-We focus on an asexual population distributed over infinitely many patches,
- which are connected by juvenile dispersal 
+We focus on an asexual, haploid population distributed over infinitely many
+ patches, which are connected by juvenile dispersal 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "see also"
@@ -323,25 +323,22 @@ key "Kuijper2016"
 \end_inset
 
 .
- The assumption of infinitely many patches provides a tractable way of calcuting
- the frequencies of the different types of patches and individuals 
+ The assumption of infinitely many patches (Wright's infinite island model:
+ 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citealp
 key "Wright1931,Wright1951"
 
 \end_inset
 
-.
- Each patch is inhabited by 
+) provides a tractable way of calcuting the frequencies of the different
+ types of patches and individuals.
+ To introduce age-structure in this model, we assume that each patch is
+ inhabited by 
 \begin_inset Formula $n=2$
 \end_inset
 
- individuals
-\end_layout
-
-\begin_layout Standard
-To introduce age-structure in this model, we consider that each patch contains
- one young breeder (subscript 
+ breeding individuals, one being a young breeder (subscript 
 \begin_inset Formula $y$
 \end_inset
 
@@ -350,22 +347,50 @@ To introduce age-structure in this model, we consider that each patch contains
 \end_inset
 
 ).
- Moreover, each patch switches between two possible environmental states
- 
-\begin_inset Formula $\mathbf{e}=\{e_{1},e_{2}\}$
-\end_inset
-
-, independently of all the other patches.
- At birth, each individual adopts one of two possible phenotypes 
-\begin_inset Formula $\mathbf{z}=\{z_{1},z_{2}\}$
-\end_inset
-
-.
+ For the sake of tractability, the age structure is determined by rank order:
+ in other words, when the older breeder dies (see below), the young breeder
+ will become the old breeder, while a new recruit will become the young
+ breeder.
+ In case the younger breeder dies, the older breeder is unaffected and a
+ new recruit becomes the young breeder.
  
 \end_layout
 
+\begin_layout Standard
+In addition, the environment is heterogeneous across space and time, with
+ patches fluctuating between two possible environmental states 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+ independently of each other.
+ Individuals then adapt to the local environment by adopting one of two
+ possible phenotypes 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ which have the highest survival in their local environment 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+.
+ The question is then whether and how parents influence the phenotypes of
+ their young dependent on their own phenotype and their age.
+\end_layout
+
 \begin_layout Subsection
-Evolution of nongenetic inheritance
+Evolution of parental effects
 \end_layout
 
 \begin_layout Standard
@@ -409,7 +434,7 @@ key "Groothuis2008"
 \end_layout
 
 \begin_layout Standard
-As mentioned before, the model considers only two age classes and two phenotypes
+As mentioned before, the model considers two age classes and two phenotypes
  for the sake of tractability, resulting in four different probabilities
  of producing 
 \begin_inset Formula $z_{1}$
@@ -760,9 +785,11 @@ Results
 \end_layout
 
 \begin_layout Standard
-We summarize below how the inheritance strategies of old and young individuals
- vary across the parameters of our model, notably (i) the relative frequency
- of both environments, (ii) the average rate of environmental 
+We summarize below how parental effects vary between old and young individuals
+ when varying the parameters of our model, notably (i) the relative frequency
+ of both environments, (ii) the average rate of environmental change and
+ (iii) the rate of dispersal.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -770,19 +797,18 @@ Result 1: Older parents are more likely to transmit phenotypes to offspring
 \end_layout
 
 \begin_layout Standard
-Figure 
+To fix ideas, Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:full_model:lineplot_age_dependence"
 
 \end_inset
 
- 
-\end_layout
-
-\begin_layout Standard
-shows that when patches of one environmental state dominate, parents produce
- only offspring of the phenotype that matches the prevalent environment.
+ shows the evolution of parental effects in old and young when varying the
+ frequency of one environment relative to the other.
+ It shows that when patches of one environmental state dominate, parental
+ effects are absent as all parents only produce offspring of the phenotype
+ which matches the most prevalent environment.
  For example, when patches of environment 
 \begin_inset Formula $e_{2}$
 \end_inset
@@ -802,107 +828,58 @@ A, B), only
 \begin_inset Formula $z_{2}$
 \end_inset
 
- offspring are produced, regardless of parental age and phenotype (as 
-\begin_inset Formula $p_{o1}=p_{y1}=p_{o2}=p_{y2}=0$
-\end_inset
-
-) resulting in a monomorphism.
- Conversely, when patches of environment 
-\begin_inset Formula $e_{1}$
-\end_inset
-
- dominate (i.e., 
-\begin_inset Formula $f_{e_{1}}>0.77$
-\end_inset
-
- in Figures 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:full_model:lineplot_age_dependence"
-
-\end_inset
-
-A, B) only 
-\begin_inset Formula $z_{1}$
-\end_inset
-
- offspring are produced (as 
-\begin_inset Formula $p_{o1}=p_{y1}=p_{o2}=p_{y2}=1$
-\end_inset
-
-).
+ offspring are produced, regardless of parental age and phenotype.
+ 
 \end_layout
 
 \begin_layout Standard
-When encounter rates of 
-\begin_inset Formula $e_{1}$
-\end_inset
-
- and 
-\begin_inset Formula $e_{2}$
-\end_inset
-
- patches are more similar, however, parental age and parental phenotype
- have substantial effects on offspring phenotype determination.
- Figure 
+When the frequencies of both environments are more similar, however, parental
+ effects evolve.
+ Moreover, these parental effects substantially according to a parent's
+ age: Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:full_model:lineplot_age_dependence"
 
 \end_inset
 
- shows that old parents are selectively favored to produce offspring bearing
- the same phenotype as theirs across a broad range of environmental frequencies:
+ shows that older parents are selectively favored to inherit their own phenotype
+ to their offspring across a broad range of environmental frequencies (i.e.,
  old 
 \begin_inset Formula $z_{1}$
 \end_inset
 
- parents produce exclusively 
+ parents produce 
 \begin_inset Formula $z_{1}$
 \end_inset
 
- offspring when environment 
-\begin_inset Formula $e_{1}$
-\end_inset
-
- patches are relatively rare to extremely common (
-\begin_inset Formula $p_{o1}=1$
-\end_inset
-
-, dashed orange lines in Figure 
+ offspring [see dashed line in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:full_model:lineplot_age_dependence"
 
 \end_inset
 
-A).
- Similarly, old 
+A], and old 
 \begin_inset Formula $z_{2}$
 \end_inset
 
- parents produce exclusively 
+ parents only produce 
 \begin_inset Formula $z_{2}$
 \end_inset
 
- offspring when 
-\begin_inset Formula $e_{2}$
-\end_inset
-
- patches are relatively rare to extremely common (
-\begin_inset Formula $p_{o2}=0$
-\end_inset
-
-, dashed blue lines in Figure 
+ offspring [see dashed line in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:full_model:lineplot_age_dependence"
 
 \end_inset
 
-B).
- Hence, old parents transmit their own phenotype to all offspring across
- a broad range of environmental frequencies.
+B] across a broad range of frequencies, 
+\begin_inset Formula $f_{e_{1}}$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -955,80 +932,22 @@ reference "fig:full_model:lineplot_age_dependence"
 \end_inset
 
 B).
- Hence, when young parents themselves bear phenotypes which do not match
- the most prevalent environment, they are unlikely to transmit those to
- offspring, which is in contrast to what happens in young parents.
-\end_layout
-
-\begin_layout Standard
-Only when young parents bear phenotypes that match the commonest environment,
- do they transmit those to offspring, yet often only partially: when 
-\begin_inset Formula $0.5>f_{e_{1}}>0.68$
-\end_inset
-
-, young 
-\begin_inset Formula $z_{1}$
-\end_inset
-
- parents produce mixtures of 
-\begin_inset Formula $z_{1}$
-\end_inset
-
- and 
-\begin_inset Formula $z_{2}$
-\end_inset
-
- phenotypes (solid line in Figure 
+ Only when young parents bear phenotypes that match the commonest environment,
+ do they transmit those to offspring, yet often only partially.
+ Consequently, Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:full_model:lineplot_age_dependence"
 
 \end_inset
 
-A).
- Only when 
-\begin_inset Formula $f_{e_{1}}>0.68$
-\end_inset
-
-, do young 
-\begin_inset Formula $z_{1}$
-\end_inset
-
- mothers transmit their phenotype to offspring with very high fidelity.
- Hence, in contrast to older parents, young parents are much less likely
- to transmit their phenotype to offspring, even when the parental phenotype
- matches prevailing conditions.
- Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:full_model:lineplot_age_dependence"
-
-\end_inset
-
-B shows that the same pattern applies to young 
-\begin_inset Formula $z_{2}$
-\end_inset
-
- parents, who are much less likely to transmit their 
-\begin_inset Formula $z_{2}$
-\end_inset
-
- phenotype to offspring relative to older 
-\begin_inset Formula $z_{2}$
-\end_inset
-
- parents.
-\end_layout
-
-\begin_layout Standard
-Overall, we conclude that young parents are thus much less likely to transmit
- their own phenotype to offspring than older parents,  suggesting that selection
- favors striking age differences in the fidelity of inheritance.
+ shows that parental effects evolve to differ substantially between old
+ and young parents.
 \end_layout
 
 \begin_layout Subsection
-Result 2: Age differences occur when dispersal is limited and environmental
- change slow
+Result 2: Age differences in parental effects occur when dispersal is limited
+ and environmental change slow
 \end_layout
 
 \begin_layout Standard
@@ -1036,7 +955,7 @@ Previous models suggest that levels of dispersal and rates of environmental
  change can substantially modulate the evolution of parental effects 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Uller2008,Leimar2015,English2015,Kuijper2016"
+key "Leimar2015,English2015,Kuijper2016"
 
 \end_inset
 
@@ -1065,26 +984,36 @@ reference "fig:suppl:full_model:po2_py2"
 
 \end_inset
 
- shows that results are identical for old and young 
+ shows results for old vs young 
 \begin_inset Formula $z_{2}$
 \end_inset
 
  parents).
- First, we find that strong age differences are selectively favored when
- i) asymmetries in the prevalence of environment 
-\begin_inset Formula $e_{1}$
+ We find the most substantial differences in parental effects between young
+ and old 
+\begin_inset Formula $z_{1}$
 \end_inset
 
- versus 
+ parents occur when i) environment 
 \begin_inset Formula $e_{2}$
 \end_inset
 
- patches are not too extreme; ii) dispersal is limited (due to high costs
- of dispersal 
+ is rarer than environment 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+, ii) dispersal is limited (due to high costs of dispersal 
 \begin_inset Formula $k$
 \end_inset
 
-); and iii) rates of environmental change 
+; e.g., Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:full_model:po1_py1"
+
+\end_inset
+
+C); and iii) rates of environmental change 
 \begin_inset Formula $\bar{s}$
 \end_inset
 
@@ -1098,11 +1027,11 @@ reference "fig:suppl:full_model:po2_py2"
 \begin_inset Formula $z_{1}$
 \end_inset
 
-) phenotype to offspring relative to young parents (resulting in 
-\begin_inset Formula $p_{o1}-p_{y1}\geq0$
+) phenotype to offspring relative to young parents (hence, 
+\begin_inset Formula $p_{o1}-p_{y1}$
 \end_inset
 
- in Figure 
+ is never negative in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:full_model:po1_py1"
@@ -1110,8 +1039,12 @@ reference "fig:full_model:po1_py1"
 \end_inset
 
 ).
- This discrepancy in inheritance fidelity between old and young parents
- is illustrated in Figure 
+ 
+\end_layout
+
+\begin_layout Standard
+This discrepancy in inheritance fidelity between old and young parents is
+ further illustrated in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:full_model:inheritance_duration"
@@ -1138,6 +1071,33 @@ reference "fig:full_model:inheritance_duration"
 \end_inset
 
 D-E).
+ Both young and old 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ parents will evolve long-term inheritance when environment 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ is the most prevalent environment (right hand side of each panel).
+ However, when environment 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ becomes ever rarer, old 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ parents maintain their high inheritance fidelity, particularly for slowly
+ changing environments, while young 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ parents rapidly attain an inheritance fidelity of 
+\begin_inset Formula $0$
+\end_inset
+
+.
  Consequently, this generalizes the finding from Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1157,7 +1117,7 @@ Discussion
 Our model predicts that parental influences on offspring phenotype determination
  should vary drastically over a parent's lifetime, with substantial consequences
  to nongenetic inheritance.
- Across a wide range of environments, we find that older parents are selectively
+ Across a wide range of conditions, we find that older parents are selectively
  favored to transmit their own phenotype to offspring, often doing so with
  high fidelity.
  By contrast, young parents are less likely to transmit their phenotype
@@ -1174,8 +1134,8 @@ Why do we find these striking differences in phenotypic inheritance between
  are maladapted (adapted) to the local environment have a lower (higher)
  survival, so only those parents with phenotypes matching the local environment
  are likely to survive to old age.
- Knowing to be of old age thus informs parents that their phenotype is likely
- to be adapted to local environmental conditions.
+ Hence, knowlege about one's old age thus informs parents that their phenotype
+ is likely to be adapted to local environmental conditions.
  Hence, when offspring are likely to experience the same environment as
  their parents, old parents are selectively favored to transmit their locally
  adapted phenotype to offspring.
@@ -1244,21 +1204,9 @@ reference "fig:full_model:lineplot_age_dependence"
 \end_inset
 
 ).
- Young parents produce mixtures, because
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-we need to think a bit about this: my explanation is that young parents
- share a patch with old parents, who already produce 100% of offspring of
- a particular kind.
- Hence, playing a pure strategy rather than producing a mixture as a young
- parent enhances extinction of the local group.
-\end_layout
-
-\end_inset
-
-.
+ Consequently, we suggest that studies on transgenerational plasticity take
+ age differences into account, as these may lead to striking differences
+ in the level of adaptive parental effects.
 \end_layout
 
 \begin_layout Standard
@@ -1367,105 +1315,60 @@ key "Heyn2012,Teschendorff2013,Zampieri2015"
 dence between the DNA methylation levels of older parents and their offspring,
  whereas the correlation between DNA methylation levels of younger parents
  and their offspring should be much weaker.
- 
 \end_layout
 
 \begin_layout Standard
-Moreover, also parental hormones deposited in the egg vary according to
- age: in European starlings 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-emph{Sturnus vulgaris}
-\end_layout
-
-\end_inset
-
- older mothers deposit more androgens into their eggs than younger ones
- 
+Our model offers several opportunities for future work: first, our model
+ has only explored the role of differential survival in enhancing the informatio
+n value of a parental phenotype 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Pilz2003,Guibert2012"
-
-\end_inset
-
-, potentially with 
-\end_layout
-
-\begin_layout Standard
-In an insightful paper on the evolution of nongenetic inheritance, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Shea2011"
-
-\end_inset
-
- distinguish between detection-based effects (where offspring phenotypes
- depend on the parental environment) and selection-based effects (where
- offspring phenotypes are a function of long-term selection, rather than
- the parental environment).
- It is tempting to suggest that selection-based effects act on young parents,
- because they have no information about the parental environment, so are
- selected to produce offspring phenotypes that match the average environment.
- By contrast, old parents would exhibit detection-based effects (as their
- offspring phenotypes effectively depend on the parental environment).
- Yet 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Shea2011"
-
-\end_inset
-
- also consider that 
-\end_layout
-
-\begin_layout Standard
-For the sake of tractability, our model makes a number of simplifying assumption
-s: first, in line with previous models on parental effects 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "English2015,Leimar2015,Kuijper2016"
-
-\end_inset
-
-, we assume a binary environment of two environmental states, raising the
- question whether our analysis is robust to more complex, continuous environment
-s.
- However, studies which assume more complex continuous environments (necessarily
- in non-spatial contexts to maintain tractability) come to similar conclusions
- as studies involving binary environments when it comes to importance of
- environmental autocorrelations and the evoluion 
-\end_layout
-
-\begin_layout Standard
-Other assumptions to discuss: (i) rank-order model of ageing.
- (ii) life-history traits
-\end_layout
-
-\begin_layout Standard
-(
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Rivoire2014,Kuijper2014a,Uller2015,Kuijper2015"
-
-\end_inset
-
-) find similar outcomes
-\end_layout
-
-\begin_layout Standard
-- cite 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Fogarty2013"
+before "sensu"
+key "McNamara2010,McNamara2011"
 
 \end_inset
 
 .
+ However, other mechanisms such as learning and adaptive plasticity may
+ even further increase the discrepancy in information content between phenotypes
+ of old and young parents (e.g., 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Fischer2014"
+
+\end_inset
+
+).
+ Consequently, we believe that age-dependent adaptive parental effects are
+ likely to be very common in nature, and future modeling studies should
+ assess the role of parental age when both parents and offspring integrate
+ multiple cues concerning the environment, parental phenotypes, and their
+ genes.
+\end_layout
+
+\begin_layout Standard
+Another promising avenue for extension is to model age-dependent parental
+ effects in sexual populations, in order to assess how parental age affects
+ parent-offspring conflict over offspring phenotype determination 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g.,"
+key "Tobler2010,Uller2011,Kuijper2017a"
+
+\end_inset
+
+.
+ Extrapolating from our model, we would predict that young parents have
+ little information to provide to young in the first place, so that offspring
+ manipulation is less likely to arise in young parents.
+ By contrast, older parents have more information to provide to their young,
+ but may not necessarily want to provide all of it, to prevent young from
+ attaining their own evolutionary optima.
+ Consequently, we would predict that parental manipulation would be strongest
+ in older, more experienced parents.
+ These suggestions highlight that age structure is likely to be a much more
+ important variable in the evolution of adaptive parental effects than is
+ currently appreciated.
 \end_layout
 
 \begin_layout Paragraph
@@ -1646,6 +1549,15 @@ reference "fig:suppl:full_model:po2_py2"
 
 , 
 \begin_inset Formula $M_{o12}=M_{y12}=M_{o21}=M_{y21}=2.0$
+\end_inset
+
+.
+ The average rate of environmental change (
+\begin_inset Formula $y$
+\end_inset
+
+-axis) is calculated as 
+\begin_inset Formula $\bar{s}=(\log_{10}(s_{e_{1}\rightarrow e_{2}})+\log_{10}(s_{e_{2}\rightarrow e_{1}}))$
 \end_inset
 
 .

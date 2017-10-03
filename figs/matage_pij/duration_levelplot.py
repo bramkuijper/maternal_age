@@ -15,6 +15,7 @@ import matplotlib.colors as colors
 import block
 rcParams['text.usetex'] = True 
 rcParams['font.family'] = 'sans-serif'
+rcParams['axes.titlesize'] = '10'
 rcParams['text.latex.preamble'] = [
        r'\usepackage{siunitx}',   # i need upright \micro symbols, but you need...
        r'\sisetup{detect-all}',   # ...this to force siunitx to actually use your fonts
@@ -75,6 +76,11 @@ for i, var_i in enumerate(vars):
 
     new_cmap = plt.get_cmap('PuRd')
 
+    title = r'Dispersal cost $k=0.1$'
+
+    if row > 0:
+        title = ""
+
     contourset = b.block(
             row=row,
             zlim=(0,4),
@@ -82,18 +88,24 @@ for i, var_i in enumerate(vars):
             yval=var_i,
             cmap=new_cmap,
             data=data_sub,
-            x_tickval=True,
-            y_tickval=True,
+            x_tickval=row>0,
+            y_tickval=col==0,
             ylab="",
             label=string.ascii_uppercase[abc_ctr],
             labelcolor="black",
-            title=r'$k=0.1$')
+            title=title)
 
     abc_ctr += 1
 
     data_sub = the_data[the_data["k"] == 0.5]
     row=i
     col=1
+    
+    
+    title = r'Dispersal cost $k=0.5$'
+
+    if row > 0:
+        title = ""
 
     contourset = b.block(
             row=row,
@@ -101,18 +113,23 @@ for i, var_i in enumerate(vars):
             yval=var_i,
             data=data_sub,
             cmap=new_cmap,
-            x_tickval=True,
-            y_tickval=True,
+            x_tickval=row>0,
+            y_tickval=col==0,
             ylab="",
             label=string.ascii_uppercase[abc_ctr],
             labelcolor="black",
-            title=r'$k=0.5$')
+            title=title)
 
     abc_ctr += 1
 
     data_sub = the_data[the_data["k"] == 0.95]
     row=i
     col=2
+    
+    title = r'Dispersal cost $k=0.95$'
+
+    if row > 0:
+        title = ""
 
     contourset = b.block(
             row=row,
@@ -120,12 +137,12 @@ for i, var_i in enumerate(vars):
             yval=var_i,
             data=data_sub,
             cmap=new_cmap,
-            x_tickval=True,
-            y_tickval=True,
+            x_tickval=row>0,
+            y_tickval=col==0,
             ylab="",
             label=string.ascii_uppercase[abc_ctr],
             labelcolor="black",
-            title=r'$k=0.95$')
+            title=title)
 
     abc_ctr += 1
 

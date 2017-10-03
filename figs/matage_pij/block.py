@@ -6,7 +6,7 @@ import scipy.ndimage
 
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
-from matplotlib.ticker import AutoMinorLocator
+from matplotlib.ticker import AutoMinorLocator, MaxNLocator
 
 # set stylesheet
 # should be present in matplotlib.get_configdir()/stylelib/$name.mplstyle
@@ -19,7 +19,22 @@ class Block:
 
         self.gridspec_stuff = gridspec
 
-    def block(self, row, col, data, yval="p11", x_tickval=False, y_tickval=False, title="", xlab="", ylab="", zlim=(-1,1), cmap="jet", label="A",label_loc=(0.12,0.25), labelcolor="white", interpolation="none"):
+    def block(self, 
+            row, 
+            col, 
+            data, 
+            yval="p11", 
+            x_tickval=False, 
+            y_tickval=False, 
+            title="", 
+            xlab="", 
+            ylab="", 
+            zlim=(-1,1), 
+            cmap="jet", 
+            label="A",
+            label_loc=(0.12,0.25), 
+            labelcolor="white", 
+            interpolation="none"):
 
         global plt
 
@@ -62,9 +77,13 @@ class Block:
 
         # set minor ticks
         minor_locator = AutoMinorLocator(5)
+        ax.xaxis.set_major_locator(MaxNLocator(6))
         ax.xaxis.set_minor_locator(minor_locator)
+
         minor_locator = AutoMinorLocator(5)
         ax.yaxis.set_minor_locator(minor_locator)
+
+        ax.set_xlim(0,1)
 
         if xlab != "":
             ax.set_xlabel(xlab)

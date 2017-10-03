@@ -14,6 +14,7 @@ import matplotlib.colors as colors
 import block
 rcParams['text.usetex'] = True 
 rcParams['font.family'] = 'sans-serif'
+rcParams['axes.titlesize'] = '10'
 rcParams['text.latex.preamble'] = [
        r'\usepackage{siunitx}',   # i need upright \micro symbols, but you need...
        r'\sisetup{detect-all}',   # ...this to force siunitx to actually use your fonts
@@ -85,7 +86,7 @@ for var_i in vars:
             y_tickval=True,
             ylab=r'Average rate of change, $\bar{s}$',
             label="A",
-            title=r'$k=0.1$')
+            title=r'Dispersal cost $k=0.1$')
 
     data_sub = the_data[the_data["k"] == 0.5]
     row=0
@@ -101,7 +102,7 @@ for var_i in vars:
             y_tickval=True,
             ylab="",
             label="B",
-            title=r'$k=0.5$')
+            title=r'Dispersal cost $k=0.5$')
 
 
     data_sub = the_data[the_data["k"] == 0.95]
@@ -118,7 +119,7 @@ for var_i in vars:
             y_tickval=True,
             ylab="",
             label="C",
-            title=r'$k=0.95$')
+            title=r'Dispersal cost $k=0.95$')
 
     # reposition colorbar so that it does not narrow the last contourplot
     # http://stackoverflow.com/questions/13784201/matplotlib-2-subplots-1-colorbar 

@@ -292,7 +292,7 @@ key "Leimar2015,English2015,Kuijper2016,McNamara2016"
 
 .
  Because of our focus on parental effects, one cue on offspring phenotype
- determation is the parental phenotype.
+ determination is the parental phenotype.
  In addition, we then consider how parental age potentially modulates the
  informational value of the parental phenotype.
  We refer the reader to 
@@ -331,7 +331,7 @@ key "Wright1931,Wright1951"
 
 \end_inset
 
-) provides a tractable way of calcuting the frequencies of the different
+) provides a tractable way of calculating the frequencies of the different
  types of patches and individuals.
  To introduce age-structure in this model, we assume that each patch is
  inhabited by 
@@ -1134,7 +1134,7 @@ Why do we find these striking differences in phenotypic inheritance between
  are maladapted (adapted) to the local environment have a lower (higher)
  survival, so only those parents with phenotypes matching the local environment
  are likely to survive to old age.
- Hence, knowlege about one's old age thus informs parents that their phenotype
+ Hence, knowledge about one's old age thus informs parents that their phenotype
  is likely to be adapted to local environmental conditions.
  Hence, when offspring are likely to experience the same environment as
  their parents, old parents are selectively favored to transmit their locally
